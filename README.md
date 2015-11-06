@@ -9,7 +9,7 @@ Tables for annotating gene lists and converting between identifiers.
 
 Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) dos this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
 
-This package has basic annotation information for:
+This package has basic annotation information from [Ensembl release 82](http://sep2015.archive.ensembl.org/index.html?redirect=no) for:
 
 - Human (`grch38`)
 - Mouse (`grcm38`)
