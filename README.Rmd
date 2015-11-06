@@ -1,0 +1,203 @@
+---
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+# annotables
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE)
+```
+
+Tables for annotating gene lists and converting between identifiers.
+
+## Why?
+
+Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) dos this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
+
+This package has basic annotation information for:
+
+- Human (`grch38`)
+- Mouse (`grcm38`)
+- Rat (`rnor6`)
+- Chicken (`galgal4`)
+- Worm (`wbcel235`)
+- Fly (`bdgp6`)
+
+Where each table contains:
+
+- `ensgene`: Ensembl gene ID
+- `entrez`: Entrez gene ID
+- `symbol`: Gene symbol
+- `chr`: Chromosome
+- `start`: Start
+- `end`: End
+- `strand`: Strand
+- `biotype`: Protein coding, pseudogene, mitochondrial tRNA, etc.
+- `description`: Full gene name/description.
+
+Additionally, there are tables for human and mouse (`grch38_gt` and `grcm38_gt`, respectively) that link ensembl gene IDs to ensembl transcript IDs.
+
+## Usage
+
+Installation:
+
+```{r}
+install.packages("devtools")
+devtools::install_github("stephenturner/annotables")
+```
+
+It isn't necessary to load dplyr, but the tables are `tbl_df` and will print nicely if you have dplyr loaded.
+
+```{r, eval=TRUE}
+library(dplyr)
+library(annotables)
+```
+
+Look at the human genes table (note the description column gets cut off because the table becomes too wide to print nicely):
+
+```{r, eval=TRUE}
+grch38
+```
+
+Look at the human genes-to-transcripts table:
+
+```{r, eval=TRUE}
+grch38_gt
+```
+
+Tables are `tbl_df`, pipe-able with dplyr:
+
+```{r, eval=TRUE, results='asis'}
+grch38 %>% 
+  filter(biotype=="protein_coding" & chr=="1") %>% 
+  select(ensgene, symbol, chr, start, end, description) %>% 
+  head %>% 
+  pander::pandoc.table(split.table=100, justify="llllll", style="rmarkdown")
+```
+
+
+Example with DESeq2 results from the [airway](https://bioconductor.org/packages/release/data/experiment/html/airway.html) package, made tidy with [biobroom](http://www.bioconductor.org/packages/devel/bioc/html/biobroom.html):
+
+```{r, eval=TRUE}
+library(DESeq2)
+library(airway)
+
+data(airway)
+airway <- DESeqDataSet(airway, design = ~cell + dex)
+airway <- DESeq(airway)
+res <- results(airway)
+
+# tidy results with biobroom
+library(biobroom)
+res_tidy <- tidy.DESeqResults(res)
+head(res_tidy)
+```
+
+```{r, eval=TRUE, results='asis'}
+res_tidy %>% 
+  arrange(p.adjusted) %>% 
+  head(20) %>% 
+  inner_join(grch38, by=c("gene"="ensgene")) %>% 
+  select(gene, estimate, p.adjusted, symbol, description) %>% 
+  pander::pandoc.table(split.table=100, justify="lrrll", style="rmarkdown")
+```
+
+## How?
+
+All the datasets here were collected using biomaRt. The code is below. It should be fairly easy to add new organisms.
+
+```{r}
+library(biomaRt)
+library(dplyr)
+
+fix_genes <- . %>% 
+  tbl_df %>% 
+  distinct %>% 
+  rename(ensgene=ensembl_gene_id,
+         entrez=entrezgene,
+         symbol=external_gene_name,
+         chr=chromosome_name,
+         start=start_position,
+         end=end_position,
+         biotype=gene_biotype)
+
+myattributes <- c("ensembl_gene_id",
+                  "entrezgene",
+                  "external_gene_name",
+                  "chromosome_name",
+                  "start_position",
+                  "end_position",
+                  "strand",
+                  "gene_biotype",
+                  "description")
+
+# Human
+grch38 <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+
+# Mouse
+grcm38 <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="mmusculus_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+
+# Rat
+rnor6 <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="rnorvegicus_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+
+# Chicken
+galgal4 <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="ggallus_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+
+# Fly
+bdgp6 <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="dmelanogaster_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+
+# Worm
+wbcel235 <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="celegans_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+```
+
+```{r}
+fix_txps <- . %>% 
+  tbl_df %>% 
+  distinct %>% 
+  rename(ensgene=ensembl_gene_id,
+         enstxp=ensembl_transcript_id)
+
+grch38_gt <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
+  getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) %>% 
+  fix_txps
+
+grcm38_gt <- useMart("ensembl") %>% 
+  useDataset(mart=., dataset="mmusculus_gene_ensembl") %>% 
+  getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) 
+```
+
+```{r}
+rm(fix_genes, fix_txps, myattributes)
+devtools::use_data(grch38)
+devtools::use_data(grcm38)
+devtools::use_data(rnor6)
+devtools::use_data(galgal4)
+devtools::use_data(bdgp6)
+devtools::use_data(wbcel235)
+devtools::use_data(grch38_gt)
+devtools::use_data(grcm38_gt)
+```
+
+

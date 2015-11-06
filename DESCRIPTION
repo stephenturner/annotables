@@ -1,0 +1,13 @@
+Package: annotables
+Type: Package
+Title: annotables
+Version: 0.1.0
+Author: Stephen Turner
+Maintainer: Stephen Turner <vustephen@gmail.com>
+Description: Provides tables for annotating Ensembl Gene IDs.
+License: GPL-3
+LazyData: TRUE
+Depends: R (>= 3.1.2)
+Suggests:
+    dplyr
+RoxygenNote: 5.0.0
