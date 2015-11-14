@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 README.*
 cran-comments.md
+.git*

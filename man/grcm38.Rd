@@ -14,5 +14,9 @@ grcm38
 \description{
 Mouse annotation GRCm38.p4 from Ensembl release 82.
 }
+\examples{
+head(grcm38)
+
+}
 \keyword{datasets}
 

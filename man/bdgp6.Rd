@@ -14,5 +14,9 @@ bdgp6
 \description{
 Fly annotation BDGP6 from Ensembl release 82.
 }
+\examples{
+head(bdgp6)
+
+}
 \keyword{datasets}
 

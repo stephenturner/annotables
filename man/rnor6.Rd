@@ -14,5 +14,9 @@ rnor6
 \description{
 Rat annotation Rnor_6.0 from Ensembl release 82.
 }
+\examples{
+head(rnor6)
+
+}
 \keyword{datasets}
 

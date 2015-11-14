@@ -1,3 +1,7 @@
+## Misc notes
+
+- "Ensembl" is not misspelled. Uses data from <http://www.ensembl.org/>.
+
 ## Test environments
 
 - local OS X install, R 3.2.2
@@ -8,7 +12,7 @@
 - This is a new submission.
 - check `--as-cran` has no errors or warnings.
 - checking installed package size ... NOTE
-  installed size is  8.0Mb
+  installed size is 10.9Mb
   sub-directories of 1Mb or more:
-    data   7.9Mb
-- This is a data package that will only rarely be updated.
+    data  10.8Mb
+- This is a data package that will only rarely (if ever) be updated.

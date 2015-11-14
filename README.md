@@ -11,7 +11,8 @@ Many bioinformatics tasks require converting gene identifiers from one conventio
 
 This package has basic annotation information from [Ensembl release 82](http://sep2015.archive.ensembl.org/index.html?redirect=no) for:
 
-- Human (`grch38`)
+- Human build 38 (`grch38`)
+- Human build 37 (`grch37`)
 - Mouse (`grcm38`)
 - Rat (`rnor6`)
 - Chicken (`galgal4`)
@@ -30,7 +31,7 @@ Where each table contains:
 - `biotype`: Protein coding, pseudogene, mitochondrial tRNA, etc.
 - `description`: Full gene name/description.
 
-Additionally, there are tables for human and mouse (`grch38_gt` and `grcm38_gt`, respectively) that link ensembl gene IDs to ensembl transcript IDs.
+Additionally, there are tables for human and mouse (`grch38_gt`, `grch37_gt`, and `grcm38_gt`, respectively) that link ensembl gene IDs to ensembl transcript IDs.
 
 ## Usage
 
@@ -183,26 +184,26 @@ res_tidy %>%
 
 | gene            |   estimate |   p.adjusted | symbol   |
 |:----------------|-----------:|-------------:|:---------|
-| ENSG00000152583 |     -4.316 |   4.624e-134 | SPARCL1  |
-| ENSG00000165995 |     -3.189 |   1.402e-133 | CACNB2   |
-| ENSG00000101347 |     -3.618 |    6.44e-125 | SAMHD1   |
-| ENSG00000120129 |     -2.871 |    6.44e-125 | DUSP1    |
-| ENSG00000189221 |     -3.231 |   9.212e-119 | MAOA     |
-| ENSG00000211445 |     -3.553 |   3.834e-107 | GPX3     |
-| ENSG00000157214 |     -1.949 |   8.503e-102 | STEAP2   |
-| ENSG00000162614 |     -2.003 |    2.969e-98 | NEXN     |
-| ENSG00000125148 |     -2.167 |    1.735e-92 | MT2A     |
-| ENSG00000154734 |     -2.286 |      4.4e-86 | ADAMTS1  |
-| ENSG00000139132 |     -2.181 |    2.434e-83 | FGD4     |
-| ENSG00000162493 |     -1.858 |    4.101e-83 | PDPN     |
-| ENSG00000162692 |      3.453 |    3.467e-82 | VCAM1    |
-| ENSG00000179094 |     -3.044 |    1.167e-81 | PER1     |
-| ENSG00000134243 |     -2.149 |    2.657e-81 | SORT1    |
-| ENSG00000163884 |     -4.079 |    1.044e-80 | KLF15    |
-| ENSG00000178695 |      2.446 |    6.106e-75 | KCTD12   |
-| ENSG00000146250 |       2.64 |    1.112e-69 | PRSS35   |
-| ENSG00000198624 |     -2.784 |    1.661e-69 | CCDC69   |
-| ENSG00000148848 |      1.783 |    1.714e-69 | ADAM12   |
+| ENSG00000152583 |     -4.316 |   4.753e-134 | SPARCL1  |
+| ENSG00000165995 |     -3.189 |    1.44e-133 | CACNB2   |
+| ENSG00000101347 |     -3.618 |   6.619e-125 | SAMHD1   |
+| ENSG00000120129 |     -2.871 |   6.619e-125 | DUSP1    |
+| ENSG00000189221 |     -3.231 |   9.468e-119 | MAOA     |
+| ENSG00000211445 |     -3.553 |    3.94e-107 | GPX3     |
+| ENSG00000157214 |     -1.949 |    8.74e-102 | STEAP2   |
+| ENSG00000162614 |     -2.003 |    3.052e-98 | NEXN     |
+| ENSG00000125148 |     -2.167 |    1.783e-92 | MT2A     |
+| ENSG00000154734 |     -2.286 |    4.522e-86 | ADAMTS1  |
+| ENSG00000139132 |     -2.181 |    2.501e-83 | FGD4     |
+| ENSG00000162493 |     -1.858 |    4.215e-83 | PDPN     |
+| ENSG00000162692 |      3.453 |    3.563e-82 | VCAM1    |
+| ENSG00000179094 |     -3.044 |    1.199e-81 | PER1     |
+| ENSG00000134243 |     -2.149 |     2.73e-81 | SORT1    |
+| ENSG00000163884 |     -4.079 |    1.073e-80 | KLF15    |
+| ENSG00000178695 |      2.446 |    6.275e-75 | KCTD12   |
+| ENSG00000146250 |       2.64 |    1.143e-69 | PRSS35   |
+| ENSG00000198624 |     -2.784 |    1.707e-69 | CCDC69   |
+| ENSG00000148848 |      1.783 |    1.762e-69 | ADAM12   |
 
 Table: Table continues below
 
@@ -267,6 +268,13 @@ grch38 <- useMart("ensembl") %>%
   getBM(mart=., attributes=myattributes) %>% 
   fix_genes
 
+# Human grch37
+grch37 <- useMart("ENSEMBL_MART_ENSEMBL", 
+                  host="grch37.ensembl.org") %>% 
+  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
+  getBM(mart=., attributes=myattributes) %>% 
+  fix_genes
+
 # Mouse
 grcm38 <- useMart("ensembl") %>% 
   useDataset(mart=., dataset="mmusculus_gene_ensembl") %>% 
@@ -306,11 +314,20 @@ fix_txps <- . %>%
   rename(ensgene=ensembl_gene_id,
          enstxp=ensembl_transcript_id)
 
+# Human build 38
 grch38_gt <- useMart("ensembl") %>% 
   useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
   getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) %>% 
   fix_txps
 
+# Human build 37
+grch37_gt <- useMart("ENSEMBL_MART_ENSEMBL", 
+                     host="grch37.ensembl.org") %>% 
+  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
+  getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) %>% 
+  fix_txps
+
+# Mouse build 38
 grcm38_gt <- useMart("ensembl") %>% 
   useDataset(mart=., dataset="mmusculus_gene_ensembl") %>% 
   getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) 
@@ -320,13 +337,13 @@ grcm38_gt <- useMart("ensembl") %>%
 ```r
 rm(fix_genes, fix_txps, myattributes)
 devtools::use_data(grch38)
+devtools::use_data(grch37)
 devtools::use_data(grcm38)
 devtools::use_data(rnor6)
 devtools::use_data(galgal4)
 devtools::use_data(bdgp6)
 devtools::use_data(wbcel235)
 devtools::use_data(grch38_gt)
+devtools::use_data(grch37_gt)
 devtools::use_data(grcm38_gt)
 ```
-
-

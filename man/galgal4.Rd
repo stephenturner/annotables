@@ -14,5 +14,9 @@ galgal4
 \description{
 Chicken annotation Galgal4 from Ensembl release 82.
 }
+\examples{
+head(galgal4)
+
+}
 \keyword{datasets}
 

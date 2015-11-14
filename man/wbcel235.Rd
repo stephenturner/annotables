@@ -14,5 +14,9 @@ wbcel235
 \description{
 Worm annotation WBcel235 from Ensembl release 82.
 }
+\examples{
+head(wbcel235)
+
+}
 \keyword{datasets}
 

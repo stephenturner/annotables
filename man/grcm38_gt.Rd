@@ -14,5 +14,9 @@ grcm38_gt
 \description{
 Mouse GRCm38.p4 Ensembl gene IDs to transcript IDs from Ensembl release 82.
 }
+\examples{
+head(grcm38_gt)
+
+}
 \keyword{datasets}
 
