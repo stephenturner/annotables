@@ -1,6 +1,7 @@
 
 # annotables
 
+[![DOI](https://zenodo.org/badge/3882/stephenturner/annotables.svg)](https://zenodo.org/badge/latestdoi/3882/stephenturner/annotables)
 
 
 Tables for annotating gene lists and converting between identifiers.
