@@ -1,7 +1,7 @@
 Package: annotables
 Type: Package
 Title: Ensembl Annotation Tables
-Version: 0.1.1
+Version: 0.1.2.9000
 Author: Stephen Turner
 Maintainer: Stephen Turner <vustephen@gmail.com>
 Description: Provides tables for converting and annotating Ensembl Gene IDs.
@@ -10,5 +10,6 @@ LazyData: TRUE
 Depends:
     R (>= 3.1.2)
 Suggests:
-    dplyr
+    dplyr,
+    yaml
 RoxygenNote: 5.0.1
