@@ -16,7 +16,7 @@ This package has basic annotation information from [Ensembl release 82](http://s
 - Human build 37 (`grch37`)
 - Mouse (`grcm38`)
 - Rat (`rnor6`)
-- Chicken (`galgal4`)
+- Chicken (`galgal5`)
 - Worm (`wbcel235`)
 - Fly (`bdgp6`)
 
@@ -289,7 +289,7 @@ rnor6 <- useMart("ensembl") %>%
   fix_genes
 
 # Chicken
-galgal4 <- useMart("ensembl") %>% 
+galgal5 <- useMart("ensembl") %>% 
   useDataset(mart=., dataset="ggallus_gene_ensembl") %>% 
   getBM(mart=., attributes=myattributes) %>% 
   fix_genes
@@ -341,7 +341,7 @@ devtools::use_data(grch38)
 devtools::use_data(grch37)
 devtools::use_data(grcm38)
 devtools::use_data(rnor6)
-devtools::use_data(galgal4)
+devtools::use_data(galgal5)
 devtools::use_data(bdgp6)
 devtools::use_data(wbcel235)
 devtools::use_data(grch38_gt)

@@ -1,6 +1,6 @@
 #' Rat annotation Rnor_6.0
 #'
-#' Rat annotation Rnor_6.0 from Ensembl release 82.
+#' Rat annotation Rnor_6.0 from Ensembl.
 #'
 #' @examples
 #' head(rnor6)

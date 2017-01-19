@@ -4,7 +4,7 @@
 \name{wbcel235}
 \alias{wbcel235}
 \title{Worm annotation WBcel235}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 48013 rows and 9 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 47065 rows and 9 columns.}
 \source{
 \url{http://useast.ensembl.org/Caenorhabditis_elegans}
 }
@@ -12,7 +12,7 @@
 wbcel235
 }
 \description{
-Worm annotation WBcel235 from Ensembl release 82.
+Worm annotation WBcel235 from Ensembl.
 }
 \examples{
 head(wbcel235)

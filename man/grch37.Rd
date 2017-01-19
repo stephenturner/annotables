@@ -4,7 +4,7 @@
 \name{grch37}
 \alias{grch37}
 \title{Human annotation GRCh37}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 67416 rows and 9 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 66978 rows and 9 columns.}
 \source{
 \url{http://grch37.ensembl.org/}
 }

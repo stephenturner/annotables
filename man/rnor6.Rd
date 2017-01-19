@@ -4,7 +4,7 @@
 \name{rnor6}
 \alias{rnor6}
 \title{Rat annotation Rnor_6.0}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 34200 rows and 9 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 33815 rows and 9 columns.}
 \source{
 \url{http://useast.ensembl.org/Rattus_norvegicus}
 }
@@ -12,7 +12,7 @@
 rnor6
 }
 \description{
-Rat annotation Rnor_6.0 from Ensembl release 82.
+Rat annotation Rnor_6.0 from Ensembl.
 }
 \examples{
 head(rnor6)
