@@ -1,6 +1,6 @@
-#' Mouse annotation GRCm38.p4
+#' Mouse annotation GRCm38
 #'
-#' Mouse annotation GRCm38.p4 from Ensembl release 82.
+#' Mouse annotation GRCm38 from Ensembl.
 #'
 #' @examples
 #' head(grcm38)

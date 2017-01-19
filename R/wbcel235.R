@@ -1,6 +1,6 @@
 #' Worm annotation WBcel235
 #'
-#' Worm annotation WBcel235 from Ensembl release 82.
+#' Worm annotation WBcel235 from Ensembl.
 #'
 #' @examples
 #' head(wbcel235)

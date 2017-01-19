@@ -12,7 +12,7 @@
 bdgp6
 }
 \description{
-Fly annotation BDGP6 from Ensembl release 82.
+Fly annotation BDGP6 from Ensembl.
 }
 \examples{
 head(bdgp6)

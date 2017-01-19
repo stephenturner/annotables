@@ -3,8 +3,8 @@
 \docType{data}
 \name{grch38}
 \alias{grch38}
-\title{Human annotation GRCh38.p3}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 66531 rows and 9 columns.}
+\title{Human annotation GRCh38}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 64101 rows and 9 columns.}
 \source{
 \url{http://useast.ensembl.org/Homo_sapiens}
 }
@@ -12,7 +12,11 @@
 grch38
 }
 \description{
-Human annotation GRCh38.p3 from Ensembl release 82.
+Human annotation GRCh38 from Ensembl.
+}
+\examples{
+head(grch38)
+
 }
 \keyword{datasets}
 

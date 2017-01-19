@@ -3,8 +3,8 @@
 \docType{data}
 \name{grcm38}
 \alias{grcm38}
-\title{Mouse annotation GRCm38.p4}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 47761 rows and 9 columns.}
+\title{Mouse annotation GRCm38}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 50730 rows and 9 columns.}
 \source{
 \url{http://useast.ensembl.org/Mus_musculus}
 }
@@ -12,7 +12,7 @@
 grcm38
 }
 \description{
-Mouse annotation GRCm38.p4 from Ensembl release 82.
+Mouse annotation GRCm38 from Ensembl.
 }
 \examples{
 head(grcm38)
