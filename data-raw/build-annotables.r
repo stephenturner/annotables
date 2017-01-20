@@ -2,71 +2,57 @@ library(yaml)
 library(dplyr)
 library(biomaRt)
 
-# load recipes
+# functions ---------------------------------------------------------------
+get_data <- function(recipe) {
+  message(recipe$dataset)
+  mart <- biomaRt::useMart(recipe$biomart, recipe$dataset, recipe$host)
+  attr <- unlist(recipe$attributes, use.names = FALSE)
+  biomaRt::getBM(attr, mart = mart)
+}
+
+tidy_data <- function(df, recipe) {
+  dplyr::tbl_df(df) %>%
+    dplyr::distinct() %>%
+    dplyr::rename_(.dots = recipe$attributes)
+}
+
+save_data <- function(..., name) {
+  path <- file.path("data/", paste0(name, ".rda"))
+  objs <- setNames(list(...), name)
+  save(list = name, file = path, envir = list2env(objs), compress = "bzip2")
+}
+
+# load recipes ------------------------------------------------------------
 recipe.files <- dir("data-raw/recipes", full.names = TRUE)
 names(recipe.files) <- sub(".yml", "", basename(recipe.files))
 recipes <- lapply(recipe.files, yaml::yaml.load_file)
 
-
 # gene annotation tables --------------------------------------------------
 
 # download gene tables
-genetables <- lapply(recipes, function(x) {
-  message(x$dataset)
-  mart <- biomaRt::useMart(x$biomart, x$dataset, x$host)
-  attr <- unlist(x$attributes, use.names = FALSE)
-  biomaRt::getBM(attr, mart = mart)
-})
+genetables <- lapply(recipes, get_data)
 
 # tidy gene tables
-fix_genes <- function(x, recipe) {
-  dplyr::tbl_df(x) %>%
-    dplyr::distinct() %>%
-    dplyr::rename_(.dots = recipe$attributes)
-}
-genetables <- Map(fix_genes, x = genetables, recipe = recipes)
-genetables
+genetables <- Map(tidy_data, genetables, recipes)
 
-# export
-(paths_genetables <- file.path("data", paste0(names(genetables), ".rda")))
-envir_genetables <- list2env(genetables)
-mapply(
-  save,
-  list = names(genetables),
-  file = as.list(paths_genetables),
-  MoreArgs = list(envir = envir_genetables, compress = "bzip2")
-)
-
+# export data
+Map(save_data, genetables, name = names(genetables))
 
 # transcript 2 gene -------------------------------------------------------
+names(recipes) <- paste0(names(recipes), "_tx2gene")
 
-# download tx2gene
-tx2gene <- lapply(recipes, function(x) {
-  message(x$dataset)
-  mart <- biomaRt::useMart(x$biomart, x$dataset, x$host)
-  attr <- c("ensembl_transcript_id", "ensembl_gene_id")
-  biomaRt::getBM(attr, mart = mart)
+recipes <- lapply(recipes, function(x) {
+  x$attributes <- c(
+    enstxp = "ensembl_transcript_id",
+    ensgene = "ensembl_gene_id")
+  return(x)
 })
 
+# download tx2gene
+tx2gene <- lapply(recipes, get_data)
+
 # tidy tx2gene
-fix_txps <- function(x) {
-  x %>%
-    dplyr::tbl_df() %>%
-    dplyr::distinct() %>%
-    dplyr::rename(enstxp=ensembl_transcript_id,
-                  ensgene=ensembl_gene_id)
-}
-tx2gene <- lapply(tx2gene, fix_txps)
-tx2gene
-names(tx2gene) <- paste0(names(tx2gene), "_tx2gene")
+tx2gene <- Map(tidy_data, tx2gene, recipes)
 
-# export
-(paths_tx2gene <- file.path("data", paste0(names(tx2gene), ".rda")))
-envir_tx2gene <- list2env(tx2gene)
-mapply(
-  save,
-  list = names(tx2gene),
-  file = as.list(paths_tx2gene),
-  MoreArgs = list(envir = envir_tx2gene, compress = "bzip2")
-)
-
+# export data
+Map(save_data, tx2gene, name = names(tx2gene))
