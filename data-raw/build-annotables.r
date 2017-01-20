@@ -38,6 +38,9 @@ genetables <- Map(tidy_data, genetables, recipes)
 # export data
 Map(save_data, genetables, name = names(genetables))
 
+# document
+Map(document_annotable, recipes, names(recipes), type = "gene")
+
 # transcript 2 gene -------------------------------------------------------
 names(recipes) <- paste0(names(recipes), "_tx2gene")
 
@@ -56,3 +59,6 @@ tx2gene <- Map(tidy_data, tx2gene, recipes)
 
 # export data
 Map(save_data, tx2gene, name = names(tx2gene))
+
+# document
+Map(document_annotable, recipes, names(recipes), type = "tx2gene")

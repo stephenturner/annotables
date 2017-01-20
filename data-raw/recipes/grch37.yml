@@ -1,3 +1,5 @@
+name: Human
+species: Homo sapiens
 host: grch37.ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: hsapiens_gene_ensembl
