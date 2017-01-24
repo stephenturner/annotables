@@ -1,6 +1,6 @@
 #' Human transcripts to genes
 #'
-#' Lookup table for converting Human (\emph{Homo sapiens}) Ensembl transcript IDs to gene IDs based on genome assembly GRCH38_TX2GENE from Ensembl.
+#' Lookup table for converting Human (\emph{Homo sapiens}) Ensembl transcript IDs to gene IDs based on genome assembly GRCH38 from Ensembl.
 #'
 #' Variables:
 #'

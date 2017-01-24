@@ -1,6 +1,6 @@
 #' Mouse transcripts to genes
 #'
-#' Lookup table for converting Mouse (\emph{Mus musculus}) Ensembl transcript IDs to gene IDs based on genome assembly GRCM38_TX2GENE from Ensembl.
+#' Lookup table for converting Mouse (\emph{Mus musculus}) Ensembl transcript IDs to gene IDs based on genome assembly GRCM38 from Ensembl.
 #'
 #' Variables:
 #'

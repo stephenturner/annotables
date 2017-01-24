@@ -1,6 +1,6 @@
 #' Fruitfly transcripts to genes
 #'
-#' Lookup table for converting Fruitfly (\emph{Drosophila melanogaster}) Ensembl transcript IDs to gene IDs based on genome assembly BDGP6_TX2GENE from Ensembl.
+#' Lookup table for converting Fruitfly (\emph{Drosophila melanogaster}) Ensembl transcript IDs to gene IDs based on genome assembly BDGP6 from Ensembl.
 #'
 #' Variables:
 #'

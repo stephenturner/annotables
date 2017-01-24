@@ -1,6 +1,6 @@
 #' Roundworm transcripts to genes
 #'
-#' Lookup table for converting Roundworm (\emph{Caenorhabditis elegans}) Ensembl transcript IDs to gene IDs based on genome assembly WBCEL235_TX2GENE from Ensembl.
+#' Lookup table for converting Roundworm (\emph{Caenorhabditis elegans}) Ensembl transcript IDs to gene IDs based on genome assembly WBCEL235 from Ensembl.
 #'
 #' Variables:
 #'
