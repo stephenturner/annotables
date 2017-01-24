@@ -3,16 +3,24 @@
 \docType{data}
 \name{grch37_tx2gene}
 \alias{grch37_tx2gene}
-\title{Human GRCh37 transcripts to genes}
+\title{Human transcripts to genes}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 215170 rows and 2 columns.}
 \source{
-\url{http://www.ensembl.org/}
+\url{http://ensembl.org/homo_sapiens}
 }
 \usage{
 grch37_tx2gene
 }
 \description{
-Human GRCh37  Ensembl transcript IDs to gene IDs.
+Lookup table for converting Human (\emph{Homo sapiens}) Ensembl transcript IDs to gene IDs based on genome assembly GRCH37 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item enstxp 
+  \item ensgene 
+}
 }
 \examples{
 head(grch37_tx2gene)

@@ -3,16 +3,31 @@
 \docType{data}
 \name{wbcel235}
 \alias{wbcel235}
-\title{Worm annotation WBcel235}
+\title{Roundworm annotation data}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 47065 rows and 9 columns.}
 \source{
-\url{http://useast.ensembl.org/Caenorhabditis_elegans}
+\url{http://ensembl.org/caenorhabditis_elegans}
 }
 \usage{
 wbcel235
 }
 \description{
-Worm annotation WBcel235 from Ensembl.
+Roundworm (\emph{Caenorhabditis elegans}) annotations based on genome assembly WBCEL235 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item ensgene 
+  \item entrez 
+  \item symbol 
+  \item chr 
+  \item start 
+  \item end 
+  \item strand 
+  \item biotype 
+  \item description 
+}
 }
 \examples{
 head(wbcel235)

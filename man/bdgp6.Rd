@@ -3,16 +3,31 @@
 \docType{data}
 \name{bdgp6}
 \alias{bdgp6}
-\title{Fly annotation BDGP6}
+\title{Fruitfly annotation data}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19639 rows and 9 columns.}
 \source{
-\url{http://useast.ensembl.org/Drosophila_melanogaster}
+\url{http://ensembl.org/drosophila_melanogaster}
 }
 \usage{
 bdgp6
 }
 \description{
-Fly annotation BDGP6 from Ensembl.
+Fruitfly (\emph{Drosophila melanogaster}) annotations based on genome assembly BDGP6 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item ensgene 
+  \item entrez 
+  \item symbol 
+  \item chr 
+  \item start 
+  \item end 
+  \item strand 
+  \item biotype 
+  \item description 
+}
 }
 \examples{
 head(bdgp6)

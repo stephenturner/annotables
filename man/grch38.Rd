@@ -3,16 +3,31 @@
 \docType{data}
 \name{grch38}
 \alias{grch38}
-\title{Human annotation GRCh38}
+\title{Human annotation data}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 64101 rows and 9 columns.}
 \source{
-\url{http://useast.ensembl.org/Homo_sapiens}
+\url{http://ensembl.org/homo_sapiens}
 }
 \usage{
 grch38
 }
 \description{
-Human annotation GRCh38 from Ensembl.
+Human (\emph{Homo sapiens}) annotations based on genome assembly GRCH38 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item ensgene 
+  \item entrez 
+  \item symbol 
+  \item chr 
+  \item start 
+  \item end 
+  \item strand 
+  \item biotype 
+  \item description 
+}
 }
 \examples{
 head(grch38)
