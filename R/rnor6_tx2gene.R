@@ -1,9 +1,18 @@
-#' Rat rnor6 transcripts to genes
+#' Rat transcripts to genes
 #'
-#' Rat rnor6 Ensembl transcript IDs to gene IDs.
+#' Lookup table for converting Rat (\emph{Rattus norvegicus}) Ensembl transcript IDs to gene IDs based on genome assembly RNOR6_TX2GENE from Ensembl.
+#'
+#' Variables:
+#'
+#' \itemize{
+#'   \item enstxp 
+#'   \item ensgene 
+#' }
 #'
 #' @examples
 #' head(rnor6_tx2gene)
 #'
-#' @source \url{http://www.ensembl.org/}
+#' @source \url{http://ensembl.org/rattus_norvegicus}
+#' @docType data
+#' @keywords datasets
 "rnor6_tx2gene"
