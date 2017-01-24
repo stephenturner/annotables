@@ -11,5 +11,6 @@ Depends:
     R (>= 3.1.2)
 Suggests:
     dplyr,
-    yaml
+    yaml,
+    whisker
 RoxygenNote: 5.0.1
