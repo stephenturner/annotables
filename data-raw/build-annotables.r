@@ -2,6 +2,8 @@ library(yaml)
 library(dplyr)
 library(biomaRt)
 
+devtools::load_all()
+
 # functions ---------------------------------------------------------------
 get_data <- function(recipe) {
   message(recipe$dataset)

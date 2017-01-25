@@ -12,5 +12,6 @@ Depends:
 Suggests:
     dplyr,
     yaml,
-    whisker
+    whisker,
+    devtools
 RoxygenNote: 5.0.1
