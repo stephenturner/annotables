@@ -1,9 +1,18 @@
-#' C. elegans wbcel235 transcripts to genes
+#' Roundworm transcripts to genes
 #'
-#' C. elegans wbcel235 Ensembl transcript IDs to gene IDs.
+#' Lookup table for converting Roundworm (\emph{Caenorhabditis elegans}) Ensembl transcript IDs to gene IDs based on genome assembly WBCEL235 from Ensembl.
+#'
+#' Variables:
+#'
+#' \itemize{
+#'   \item enstxp 
+#'   \item ensgene 
+#' }
 #'
 #' @examples
 #' head(wbcel235_tx2gene)
 #'
-#' @source \url{http://www.ensembl.org/}
+#' @source \url{http://ensembl.org/caenorhabditis_elegans}
+#' @docType data
+#' @keywords datasets
 "wbcel235_tx2gene"

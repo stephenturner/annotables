@@ -1,9 +1,18 @@
-#' Chicken (galgal5) transcripts to genes
+#' Chicken transcripts to genes
 #'
-#' Chicken (galgal5) Ensembl transcript IDs to gene IDs.
+#' Lookup table for converting Chicken (\emph{Gallus gallus}) Ensembl transcript IDs to gene IDs based on genome assembly GALGAL5 from Ensembl.
+#'
+#' Variables:
+#'
+#' \itemize{
+#'   \item enstxp 
+#'   \item ensgene 
+#' }
 #'
 #' @examples
 #' head(galgal5_tx2gene)
 #'
-#' @source \url{http://www.ensembl.org/}
+#' @source \url{http://ensembl.org/gallus_gallus}
+#' @docType data
+#' @keywords datasets
 "galgal5_tx2gene"

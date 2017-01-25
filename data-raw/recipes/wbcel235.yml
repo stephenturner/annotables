@@ -1,3 +1,5 @@
+name: Roundworm
+species: Caenorhabditis elegans
 host: ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: celegans_gene_ensembl

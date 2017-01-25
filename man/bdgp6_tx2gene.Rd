@@ -3,16 +3,24 @@
 \docType{data}
 \name{bdgp6_tx2gene}
 \alias{bdgp6_tx2gene}
-\title{Fly BDGP6 transcripts to genes}
+\title{Fruitfly transcripts to genes}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 34749 rows and 2 columns.}
 \source{
-\url{http://www.ensembl.org/}
+\url{http://ensembl.org/drosophila_melanogaster}
 }
 \usage{
 bdgp6_tx2gene
 }
 \description{
-Fly BDGP6 Ensembl transcript IDs to gene IDs.
+Lookup table for converting Fruitfly (\emph{Drosophila melanogaster}) Ensembl transcript IDs to gene IDs based on genome assembly BDGP6 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item enstxp 
+  \item ensgene 
+}
 }
 \examples{
 head(bdgp6_tx2gene)

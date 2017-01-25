@@ -3,16 +3,31 @@
 \docType{data}
 \name{rnor6}
 \alias{rnor6}
-\title{Rat annotation Rnor_6.0}
+\title{Rat annotation data}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 33815 rows and 9 columns.}
 \source{
-\url{http://useast.ensembl.org/Rattus_norvegicus}
+\url{http://ensembl.org/rattus_norvegicus}
 }
 \usage{
 rnor6
 }
 \description{
-Rat annotation Rnor_6.0 from Ensembl.
+Rat (\emph{Rattus norvegicus}) annotations based on genome assembly RNOR6 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item ensgene 
+  \item entrez 
+  \item symbol 
+  \item chr 
+  \item start 
+  \item end 
+  \item strand 
+  \item biotype 
+  \item description 
+}
 }
 \examples{
 head(rnor6)

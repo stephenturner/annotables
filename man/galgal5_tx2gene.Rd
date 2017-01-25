@@ -3,16 +3,24 @@
 \docType{data}
 \name{galgal5_tx2gene}
 \alias{galgal5_tx2gene}
-\title{Chicken (galgal5) transcripts to genes}
+\title{Chicken transcripts to genes}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 38118 rows and 2 columns.}
 \source{
-\url{http://www.ensembl.org/}
+\url{http://ensembl.org/gallus_gallus}
 }
 \usage{
 galgal5_tx2gene
 }
 \description{
-Chicken (galgal5) Ensembl transcript IDs to gene IDs.
+Lookup table for converting Chicken (\emph{Gallus gallus}) Ensembl transcript IDs to gene IDs based on genome assembly GALGAL5 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item enstxp 
+  \item ensgene 
+}
 }
 \examples{
 head(galgal5_tx2gene)

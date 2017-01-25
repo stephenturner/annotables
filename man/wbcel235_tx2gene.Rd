@@ -3,16 +3,24 @@
 \docType{data}
 \name{wbcel235_tx2gene}
 \alias{wbcel235_tx2gene}
-\title{C. elegans wbcel235 transcripts to genes}
+\title{Roundworm transcripts to genes}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 58941 rows and 2 columns.}
 \source{
-\url{http://www.ensembl.org/}
+\url{http://ensembl.org/caenorhabditis_elegans}
 }
 \usage{
 wbcel235_tx2gene
 }
 \description{
-C. elegans wbcel235 Ensembl transcript IDs to gene IDs.
+Lookup table for converting Roundworm (\emph{Caenorhabditis elegans}) Ensembl transcript IDs to gene IDs based on genome assembly WBCEL235 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item enstxp 
+  \item ensgene 
+}
 }
 \examples{
 head(wbcel235_tx2gene)

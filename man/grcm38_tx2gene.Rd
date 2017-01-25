@@ -3,16 +3,24 @@
 \docType{data}
 \name{grcm38_tx2gene}
 \alias{grcm38_tx2gene}
-\title{Mouse GRCm38 transcripts to genes}
+\title{Mouse transcripts to genes}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 124168 rows and 2 columns.}
 \source{
-\url{http://www.ensembl.org/}
+\url{http://ensembl.org/mus_musculus}
 }
 \usage{
 grcm38_tx2gene
 }
 \description{
-Mouse GRCm38 Ensembl transcript IDs to gene IDs.
+Lookup table for converting Mouse (\emph{Mus musculus}) Ensembl transcript IDs to gene IDs based on genome assembly GRCM38 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item enstxp 
+  \item ensgene 
+}
 }
 \examples{
 head(grcm38_tx2gene)

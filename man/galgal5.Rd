@@ -3,16 +3,31 @@
 \docType{data}
 \name{galgal5}
 \alias{galgal5}
-\title{Chicken annotation Galgal5}
+\title{Chicken annotation data}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 25677 rows and 9 columns.}
 \source{
-\url{http://useast.ensembl.org/Gallus_gallus}
+\url{http://ensembl.org/gallus_gallus}
 }
 \usage{
 galgal5
 }
 \description{
-Chicken annotation Galgal5 from Ensembl.
+Chicken (\emph{Gallus gallus}) annotations based on genome assembly GALGAL5 from Ensembl.
+}
+\details{
+Variables:
+
+\itemize{
+  \item ensgene 
+  \item entrez 
+  \item symbol 
+  \item chr 
+  \item start 
+  \item end 
+  \item strand 
+  \item biotype 
+  \item description 
+}
 }
 \examples{
 head(galgal5)
