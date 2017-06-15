@@ -3,7 +3,7 @@ annotables
 
 [![DOI](https://zenodo.org/badge/3882/stephenturner/annotables.svg)](https://zenodo.org/badge/latestdoi/3882/stephenturner/annotables)
 
-Tables for annotating gene lists and converting between identifiers.
+Provides tables for converting and annotating Ensembl Gene IDs.
 
 Installation
 ------------
@@ -49,9 +49,9 @@ Where each table contains:
 -   `end`: End
 -   `strand`: Strand
 -   `biotype`: Protein coding, pseudogene, mitochondrial tRNA, etc.
--   `description`: Full gene name/description.
+-   `description`: Full gene name/description
 
-Additionally, there are `tx2gene` tables that link ensembl gene IDs to ensembl transcript IDs.
+Additionally, there are `tx2gene` tables that link Ensembl gene IDs to Ensembl transcript IDs.
 
 Usage
 -----
@@ -103,7 +103,7 @@ grch38_tx2gene
     ## 10 ENST00000636327 ENSG00000283276
     ## # ... with 215,919 more rows
 
-Tables are `tibble`, pipe-able with [dplyr](http://dplyr.tidyverse.org):
+Tables are saved in [tibble](http://tibble.tidyverse.org) format, pipe-able with [dplyr](http://dplyr.tidyverse.org):
 
 ``` r
 grch38 %>% 
@@ -122,7 +122,7 @@ grch38 %>%
 | ENSG00000280316 | AL365181.1 | 1   |  156597173|  156599410|                                                                                            |
 | ENSG00000221888 | OR1C1      | 1   |  247757462|  247758406| olfactory receptor family 1 subfamily C member 1 \[Source:HGNC Symbol;Acc:HGNC:8182\]      |
 
-Example with DESeq2 results from the [airway](https://bioconductor.org/packages/release/data/experiment/html/airway.html) package, made tidy with [biobroom](http://www.bioconductor.org/packages/devel/bioc/html/biobroom.html):
+Example with [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) results from the [airway](https://bioconductor.org/packages/release/data/experiment/html/airway.html) package, made tidy with [biobroom](http://www.bioconductor.org/packages/devel/bioc/html/biobroom.html):
 
 ``` r
 library(DESeq2)
