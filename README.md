@@ -21,13 +21,6 @@ biocLite("stephenturner/annotables")
 
 ``` r
 install.packages("devtools")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/j1/hw6j14mj3wq381x7mynwfbp00000gn/T//RtmpjVQerD/downloaded_packages
-
-``` r
 devtools::install_github("stephenturner/annotables")
 ```
 

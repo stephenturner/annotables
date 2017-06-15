@@ -32,14 +32,14 @@ This is an [R][] package.
 
 ### [Bioconductor][] method
 
-```{r}
+```{r, eval=FALSE}
 source("https://bioconductor.org/biocLite.R")
 biocLite("stephenturner/annotables")
 ```
 
 ### [devtools][] method
 
-```{r}
+```{r, eval=FALSE}
 install.packages("devtools")
 devtools::install_github("stephenturner/annotables")
 ```
