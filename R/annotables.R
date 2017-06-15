@@ -1,4 +1,4 @@
 #' annotables
 #'
-#' R data package for annotating/converting Gene IDs.
+#' Provides tables for converting and annotating Ensembl Gene IDs.
 "_PACKAGE"

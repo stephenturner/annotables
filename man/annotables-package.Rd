@@ -6,7 +6,7 @@
 \alias{annotables-package}
 \title{annotables}
 \description{
-R data package for annotating/converting Gene IDs.
+Provides tables for converting and annotating Ensembl Gene IDs.
 }
 \author{
 \strong{Maintainer}: Stephen Turner \email{vustephen@gmail.com}
