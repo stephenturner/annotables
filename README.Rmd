@@ -1,23 +1,25 @@
 ---
-output: 
-  html_document: 
-    keep_md: yes
+title: "annotables"
+output: github_document
 ---
-
-# annotables
 
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE)
+opts_chunk$set(
+    cache = TRUE,
+    echo = TRUE,
+    eval = FALSE,
+    message = FALSE,
+    warning = FALSE)
 ```
 
 Tables for annotating gene lists and converting between identifiers.
 
 ## Why?
 
-Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) dos this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
+Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) does this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
 
-This package has basic annotation information from [Ensembl release 82](http://sep2015.archive.ensembl.org/index.html?redirect=no) for:
+This package has basic annotation information from [Ensembl release 89](http://may2017.archive.ensembl.org/) for:
 
 - Human build 38 (`grch38`)
 - Human build 37 (`grch37`)
@@ -50,7 +52,7 @@ install.packages("devtools")
 devtools::install_github("stephenturner/annotables")
 ```
 
-It isn't necessary to load dplyr, but the tables are `tbl_df` and will print nicely if you have dplyr loaded.
+It isn't necessary to load dplyr, but the tables are `tibble` and will print nicely if you have dplyr loaded.
 
 ```{r, eval=TRUE}
 library(dplyr)
@@ -66,17 +68,17 @@ grch38
 Look at the human genes-to-transcripts table:
 
 ```{r, eval=TRUE}
-grch38_gt
+grch38_tx2gene
 ```
 
-Tables are `tbl_df`, pipe-able with dplyr:
+Tables are `tibble`, pipe-able with dplyr:
 
 ```{r, eval=TRUE, results='asis'}
 grch38 %>% 
-  filter(biotype=="protein_coding" & chr=="1") %>% 
-  select(ensgene, symbol, chr, start, end, description) %>% 
-  head %>% 
-  pander::pandoc.table(split.table=100, justify="llllll", style="rmarkdown")
+    filter(biotype == "protein_coding" & chr == "1") %>% 
+    select(ensgene, symbol, chr, start, end, description) %>% 
+    head %>% 
+    kable
 ```
 
 
@@ -99,122 +101,9 @@ head(res_tidy)
 
 ```{r, eval=TRUE, results='asis'}
 res_tidy %>% 
-  arrange(p.adjusted) %>% 
-  head(20) %>% 
-  inner_join(grch38, by=c("gene"="ensgene")) %>% 
-  select(gene, estimate, p.adjusted, symbol, description) %>% 
-  pander::pandoc.table(split.table=100, justify="lrrll", style="rmarkdown")
-```
-
-## How?
-
-All the datasets here were collected using biomaRt. The code is below. It should be fairly easy to add new organisms.
-
-```{r}
-library(biomaRt)
-library(dplyr)
-
-fix_genes <- . %>% 
-  tbl_df %>% 
-  distinct %>% 
-  rename(ensgene=ensembl_gene_id,
-         entrez=entrezgene,
-         symbol=external_gene_name,
-         chr=chromosome_name,
-         start=start_position,
-         end=end_position,
-         biotype=gene_biotype)
-
-myattributes <- c("ensembl_gene_id",
-                  "entrezgene",
-                  "external_gene_name",
-                  "chromosome_name",
-                  "start_position",
-                  "end_position",
-                  "strand",
-                  "gene_biotype",
-                  "description")
-
-# Human
-grch38 <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-
-# Human grch37
-grch37 <- useMart("ENSEMBL_MART_ENSEMBL", 
-                  host="grch37.ensembl.org") %>% 
-  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-
-# Mouse
-grcm38 <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="mmusculus_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-
-# Rat
-rnor6 <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="rnorvegicus_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-
-# Chicken
-galgal5 <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="ggallus_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-
-# Fly
-bdgp6 <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="dmelanogaster_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-
-# Worm
-wbcel235 <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="celegans_gene_ensembl") %>% 
-  getBM(mart=., attributes=myattributes) %>% 
-  fix_genes
-```
-
-```{r}
-fix_txps <- . %>% 
-  tbl_df %>% 
-  distinct %>% 
-  rename(ensgene=ensembl_gene_id,
-         enstxp=ensembl_transcript_id)
-
-# Human build 38
-grch38_gt <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
-  getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) %>% 
-  fix_txps
-
-# Human build 37
-grch37_gt <- useMart("ENSEMBL_MART_ENSEMBL", 
-                     host="grch37.ensembl.org") %>% 
-  useDataset(mart=., dataset="hsapiens_gene_ensembl") %>% 
-  getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) %>% 
-  fix_txps
-
-# Mouse build 38
-grcm38_gt <- useMart("ensembl") %>% 
-  useDataset(mart=., dataset="mmusculus_gene_ensembl") %>% 
-  getBM(mart=., attributes=c("ensembl_gene_id", "ensembl_transcript_id")) 
-```
-
-```{r}
-rm(fix_genes, fix_txps, myattributes)
-devtools::use_data(grch38)
-devtools::use_data(grch37)
-devtools::use_data(grcm38)
-devtools::use_data(rnor6)
-devtools::use_data(galgal5)
-devtools::use_data(bdgp6)
-devtools::use_data(wbcel235)
-devtools::use_data(grch38_gt)
-devtools::use_data(grch37_gt)
-devtools::use_data(grcm38_gt)
+    arrange(p.adjusted) %>% 
+    head(20) %>% 
+    inner_join(grch38, by = c("gene" = "ensgene")) %>% 
+    select(gene, estimate, p.adjusted, symbol, description) %>% 
+    kable
 ```

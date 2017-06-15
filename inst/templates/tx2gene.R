@@ -1,13 +1,11 @@
 {{=<% %>=}}
 #' <% name %> transcripts to genes
 #'
-#' Lookup table for converting <% name %> (\emph{ <% species %> }) Ensembl transcript IDs to gene IDs based on genome assembly <% assembly %> from Ensembl.
+#' Lookup table for converting <% name %> (*<% species %>*) Ensembl transcript IDs to gene IDs based on genome assembly <% assembly %> from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{ <%# attributes %>
-#'   \item <% . %> <%/ attributes %>
-#'  }
+#' <%# attributes %>
+#' - <% . %><%/ attributes %>
 #'
 #' @examples
 #' head(<% table %>)

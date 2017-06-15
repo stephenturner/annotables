@@ -4,7 +4,7 @@
 \name{galgal5}
 \alias{galgal5}
 \title{Chicken annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 25677 rows and 9 columns.}
+\format{An object of class \code{data.frame} with 25677 rows and 9 columns.}
 \source{
 \url{http://ensembl.org/gallus_gallus}
 }
@@ -18,15 +18,15 @@ Chicken (\emph{Gallus gallus}) annotations based on genome assembly GALGAL5 from
 Variables:
 
 \itemize{
-  \item ensgene 
-  \item entrez 
-  \item symbol 
-  \item chr 
-  \item start 
-  \item end 
-  \item strand 
-  \item biotype 
-  \item description 
+\item ensgene
+\item entrez
+\item symbol
+\item chr
+\item start
+\item end
+\item strand
+\item biotype
+\item description
 }
 }
 \examples{
@@ -34,4 +34,3 @@ head(galgal5)
 
 }
 \keyword{datasets}
-

@@ -16,10 +16,9 @@ Lookup table for converting Roundworm (\emph{Caenorhabditis elegans}) Ensembl tr
 }
 \details{
 Variables:
-
 \itemize{
-  \item enstxp 
-  \item ensgene 
+\item enstxp
+\item ensgene
 }
 }
 \examples{
@@ -27,4 +26,3 @@ head(wbcel235_tx2gene)
 
 }
 \keyword{datasets}
-

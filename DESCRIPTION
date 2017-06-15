@@ -1,17 +1,23 @@
 Package: annotables
 Type: Package
 Title: Ensembl Annotation Tables
-Version: 0.1.2.9000
-Author: Stephen Turner
-Maintainer: Stephen Turner <vustephen@gmail.com>
+Version: 0.1.3
+Authors@R: c(
+    person("Stephen", "Turner",
+           email = "vustephen@gmail.com",
+           role = c("aut", "cre")),
+    person("Michael J.", "Steinbaugh",
+           email = "mike@steinbaugh.com",
+           role = "aut"))
 Description: Provides tables for converting and annotating Ensembl Gene IDs.
 License: GPL-3
 LazyData: TRUE
 Depends:
     R (>= 3.1.2)
 Suggests:
+    devtools,
     dplyr,
-    yaml,
     whisker,
-    devtools
-RoxygenNote: 5.0.1
+    yaml
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1

@@ -1,20 +1,18 @@
 #' Rat annotation data
 #'
-#' Rat (\emph{Rattus norvegicus}) annotations based on genome assembly RNOR6 from Ensembl.
+#' Rat (*Rattus norvegicus*) annotations based on genome assembly RNOR6 from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{
-#'   \item ensgene 
-#'   \item entrez 
-#'   \item symbol 
-#'   \item chr 
-#'   \item start 
-#'   \item end 
-#'   \item strand 
-#'   \item biotype 
-#'   \item description 
-#' }
+#' 
+#' - ensgene
+#' - entrez
+#' - symbol
+#' - chr
+#' - start
+#' - end
+#' - strand
+#' - biotype
+#' - description
 #'
 #' @examples
 #' head(rnor6)

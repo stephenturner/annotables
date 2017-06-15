@@ -1,13 +1,11 @@
 #' Rat transcripts to genes
 #'
-#' Lookup table for converting Rat (\emph{Rattus norvegicus}) Ensembl transcript IDs to gene IDs based on genome assembly RNOR6 from Ensembl.
+#' Lookup table for converting Rat (*Rattus norvegicus*) Ensembl transcript IDs to gene IDs based on genome assembly RNOR6 from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{
-#'   \item enstxp 
-#'   \item ensgene 
-#' }
+#' 
+#' - enstxp
+#' - ensgene
 #'
 #' @examples
 #' head(rnor6_tx2gene)

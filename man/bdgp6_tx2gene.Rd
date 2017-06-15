@@ -16,10 +16,9 @@ Lookup table for converting Fruitfly (\emph{Drosophila melanogaster}) Ensembl tr
 }
 \details{
 Variables:
-
 \itemize{
-  \item enstxp 
-  \item ensgene 
+\item enstxp
+\item ensgene
 }
 }
 \examples{
@@ -27,4 +26,3 @@ head(bdgp6_tx2gene)
 
 }
 \keyword{datasets}
-

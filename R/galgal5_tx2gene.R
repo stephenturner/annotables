@@ -1,13 +1,11 @@
 #' Chicken transcripts to genes
 #'
-#' Lookup table for converting Chicken (\emph{Gallus gallus}) Ensembl transcript IDs to gene IDs based on genome assembly GALGAL5 from Ensembl.
+#' Lookup table for converting Chicken (*Gallus gallus*) Ensembl transcript IDs to gene IDs based on genome assembly GALGAL5 from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{
-#'   \item enstxp 
-#'   \item ensgene 
-#' }
+#' 
+#' - enstxp
+#' - ensgene
 #'
 #' @examples
 #' head(galgal5_tx2gene)

@@ -4,7 +4,7 @@
 \name{rnor6_tx2gene}
 \alias{rnor6_tx2gene}
 \title{Rat transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 40459 rows and 2 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 41078 rows and 2 columns.}
 \source{
 \url{http://ensembl.org/rattus_norvegicus}
 }
@@ -16,10 +16,9 @@ Lookup table for converting Rat (\emph{Rattus norvegicus}) Ensembl transcript ID
 }
 \details{
 Variables:
-
 \itemize{
-  \item enstxp 
-  \item ensgene 
+\item enstxp
+\item ensgene
 }
 }
 \examples{
@@ -27,4 +26,3 @@ head(rnor6_tx2gene)
 
 }
 \keyword{datasets}
-

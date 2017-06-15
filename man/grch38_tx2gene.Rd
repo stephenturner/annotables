@@ -4,7 +4,7 @@
 \name{grch38_tx2gene}
 \alias{grch38_tx2gene}
 \title{Human transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 215929 rows and 2 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 218207 rows and 2 columns.}
 \source{
 \url{http://ensembl.org/homo_sapiens}
 }
@@ -16,10 +16,9 @@ Lookup table for converting Human (\emph{Homo sapiens}) Ensembl transcript IDs t
 }
 \details{
 Variables:
-
 \itemize{
-  \item enstxp 
-  \item ensgene 
+\item enstxp
+\item ensgene
 }
 }
 \examples{
@@ -27,4 +26,3 @@ head(grch38_tx2gene)
 
 }
 \keyword{datasets}
-

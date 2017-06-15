@@ -4,7 +4,7 @@
 \name{grcm38}
 \alias{grcm38}
 \title{Mouse annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 50730 rows and 9 columns.}
+\format{An object of class \code{data.frame} with 53001 rows and 9 columns.}
 \source{
 \url{http://ensembl.org/mus_musculus}
 }
@@ -18,15 +18,15 @@ Mouse (\emph{Mus musculus}) annotations based on genome assembly GRCM38 from Ens
 Variables:
 
 \itemize{
-  \item ensgene 
-  \item entrez 
-  \item symbol 
-  \item chr 
-  \item start 
-  \item end 
-  \item strand 
-  \item biotype 
-  \item description 
+\item ensgene
+\item entrez
+\item symbol
+\item chr
+\item start
+\item end
+\item strand
+\item biotype
+\item description
 }
 }
 \examples{
@@ -34,4 +34,3 @@ head(grcm38)
 
 }
 \keyword{datasets}
-

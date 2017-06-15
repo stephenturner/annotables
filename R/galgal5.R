@@ -1,20 +1,18 @@
 #' Chicken annotation data
 #'
-#' Chicken (\emph{Gallus gallus}) annotations based on genome assembly GALGAL5 from Ensembl.
+#' Chicken (*Gallus gallus*) annotations based on genome assembly GALGAL5 from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{
-#'   \item ensgene 
-#'   \item entrez 
-#'   \item symbol 
-#'   \item chr 
-#'   \item start 
-#'   \item end 
-#'   \item strand 
-#'   \item biotype 
-#'   \item description 
-#' }
+#' 
+#' - ensgene
+#' - entrez
+#' - symbol
+#' - chr
+#' - start
+#' - end
+#' - strand
+#' - biotype
+#' - description
 #'
 #' @examples
 #' head(galgal5)

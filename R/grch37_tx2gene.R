@@ -1,13 +1,11 @@
 #' Human transcripts to genes
 #'
-#' Lookup table for converting Human (\emph{Homo sapiens}) Ensembl transcript IDs to gene IDs based on genome assembly GRCH37 from Ensembl.
+#' Lookup table for converting Human (*Homo sapiens*) Ensembl transcript IDs to gene IDs based on genome assembly GRCH37 from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{
-#'   \item enstxp 
-#'   \item ensgene 
-#' }
+#' 
+#' - enstxp
+#' - ensgene
 #'
 #' @examples
 #' head(grch37_tx2gene)

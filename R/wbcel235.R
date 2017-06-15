@@ -1,20 +1,18 @@
 #' Roundworm annotation data
 #'
-#' Roundworm (\emph{Caenorhabditis elegans}) annotations based on genome assembly WBCEL235 from Ensembl.
+#' Roundworm (*Caenorhabditis elegans*) annotations based on genome assembly WBCEL235 from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{
-#'   \item ensgene 
-#'   \item entrez 
-#'   \item symbol 
-#'   \item chr 
-#'   \item start 
-#'   \item end 
-#'   \item strand 
-#'   \item biotype 
-#'   \item description 
-#' }
+#' 
+#' - ensgene
+#' - entrez
+#' - symbol
+#' - chr
+#' - start
+#' - end
+#' - strand
+#' - biotype
+#' - description
 #'
 #' @examples
 #' head(wbcel235)

@@ -16,10 +16,9 @@ Lookup table for converting Chicken (\emph{Gallus gallus}) Ensembl transcript ID
 }
 \details{
 Variables:
-
 \itemize{
-  \item enstxp 
-  \item ensgene 
+\item enstxp
+\item ensgene
 }
 }
 \examples{
@@ -27,4 +26,3 @@ head(galgal5_tx2gene)
 
 }
 \keyword{datasets}
-

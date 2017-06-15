@@ -1,13 +1,11 @@
 {{=<% %>=}}
 #' <% name %> annotation data
 #'
-#' <% name %> (\emph{ <% species %> }) annotations based on genome assembly <% assembly %> from Ensembl.
+#' <% name %> (*<% species %>*) annotations based on genome assembly <% assembly %> from Ensembl.
 #'
 #' Variables:
-#'
-#' \itemize{ <%# attributes %>
-#'   \item <% . %> <%/ attributes %>
-#'  }
+#' <%# attributes %>
+#' - <% . %><%/ attributes %>
 #'
 #' @examples
 #' head(<% table %>)
