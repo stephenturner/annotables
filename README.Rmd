@@ -8,10 +8,11 @@ library(knitr)
 opts_chunk$set(
     cache = TRUE,
     echo = TRUE,
-    eval = FALSE,
     message = FALSE,
     warning = FALSE)
 ```
+
+[![DOI](https://zenodo.org/badge/3882/stephenturner/annotables.svg)](https://zenodo.org/badge/latestdoi/3882/stephenturner/annotables)
 
 Tables for annotating gene lists and converting between identifiers.
 
@@ -47,33 +48,33 @@ Additionally, there are tables for human and mouse (`grch38_gt`, `grch37_gt`, an
 
 Installation:
 
-```{r}
+```{r, eval=FALSE}
 install.packages("devtools")
 devtools::install_github("stephenturner/annotables")
 ```
 
 It isn't necessary to load dplyr, but the tables are `tibble` and will print nicely if you have dplyr loaded.
 
-```{r, eval=TRUE}
+```{r}
 library(dplyr)
 library(annotables)
 ```
 
 Look at the human genes table (note the description column gets cut off because the table becomes too wide to print nicely):
 
-```{r, eval=TRUE}
+```{r}
 grch38
 ```
 
 Look at the human genes-to-transcripts table:
 
-```{r, eval=TRUE}
+```{r}
 grch38_tx2gene
 ```
 
 Tables are `tibble`, pipe-able with dplyr:
 
-```{r, eval=TRUE, results='asis'}
+```{r, results='asis'}
 grch38 %>% 
     filter(biotype == "protein_coding" & chr == "1") %>% 
     select(ensgene, symbol, chr, start, end, description) %>% 
@@ -84,7 +85,7 @@ grch38 %>%
 
 Example with DESeq2 results from the [airway](https://bioconductor.org/packages/release/data/experiment/html/airway.html) package, made tidy with [biobroom](http://www.bioconductor.org/packages/devel/bioc/html/biobroom.html):
 
-```{r, eval=TRUE}
+```{r}
 library(DESeq2)
 library(airway)
 
@@ -99,7 +100,7 @@ res_tidy <- tidy.DESeqResults(res)
 head(res_tidy)
 ```
 
-```{r, eval=TRUE, results='asis'}
+```{r, results='asis'}
 res_tidy %>% 
     arrange(p.adjusted) %>% 
     head(20) %>% 

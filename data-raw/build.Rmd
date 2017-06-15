@@ -3,12 +3,16 @@ title: "Build annotables"
 date: "`r Sys.Date()`"
 ---
 
-```{r setup}
+```{r setup, include=FALSE}
+library(knitr)
+opts_knit$set(root.dir = normalizePath(".."))
+opts_chunk$set(cache = TRUE)
+
 library(yaml)
 library(biomaRt)
 library(rlang)
 library(tidyverse)
-knitr::opts_knit$set(root.dir = normalizePath(".."))
+
 devtools::load_all()
 ```
 
