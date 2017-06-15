@@ -4,7 +4,7 @@
 \name{grch38}
 \alias{grch38}
 \title{Human annotation data}
-\format{An object of class \code{data.frame} with 64366 rows and 9 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 64366 rows and 9 columns.}
 \source{
 \url{http://ensembl.org/homo_sapiens}
 }
@@ -16,7 +16,6 @@ Human (\emph{Homo sapiens}) annotations based on genome assembly GRCH38 from Ens
 }
 \details{
 Variables:
-
 \itemize{
 \item ensgene
 \item entrez
