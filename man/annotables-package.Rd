@@ -11,9 +11,9 @@ Provides tables for converting and annotating Ensembl Gene IDs.
 \author{
 \strong{Maintainer}: Stephen Turner \email{vustephen@gmail.com}
 
-Authors:
+Other contributors:
 \itemize{
-  \item Michael J. Steinbaugh \email{mike@steinbaugh.com}
+  \item Michael J. Steinbaugh \email{mike@steinbaugh.com} [contributor]
 }
 
 }
