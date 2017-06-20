@@ -3,15 +3,15 @@ title: "Build annotables"
 date: "`r Sys.Date()`"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, message=FALSE}
 library(knitr)
 opts_knit$set(root.dir = normalizePath(".."))
 opts_chunk$set(cache = TRUE)
 
-library(yaml)
 library(biomaRt)
+library(yaml)
 library(rlang)
-library(tidyverse)
+library(dplyr)
 
 devtools::load_all()
 ```
@@ -79,4 +79,16 @@ Map(save_data, tx2gene, name = names(tx2gene))
 
 # document
 Map(document_annotable, recipes, names(recipes), type = "tx2gene")
+```
+
+```{r ensembl_version}
+ensembl_version <- listMarts() %>%
+    filter(biomart == "ENSEMBL_MART_ENSEMBL") %>%
+    pull(version)
+save_data(ensembl_version, name = "ensembl_version")
+```
+
+```{r readme, results='hide'}
+options(knitr.duplicate.label = "allow")  # duplicate setup chunks
+rmarkdown::render("README.Rmd")
 ```
