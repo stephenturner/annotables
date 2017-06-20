@@ -8,7 +8,7 @@ Authors@R: c(
            role = c("aut", "cre")),
     person("Michael J.", "Steinbaugh",
            email = "mike@steinbaugh.com",
-           role = "aut"))
+           role = "ctb"))
 Description: Provides tables for converting and annotating Ensembl Gene IDs.
 License: GPL-3
 LazyData: TRUE
@@ -17,6 +17,9 @@ Depends:
 Suggests:
     devtools,
     dplyr,
+    knitr,
+    rlang,
+    rmarkdown,
     whisker,
     yaml
 Roxygen: list(markdown = TRUE)
