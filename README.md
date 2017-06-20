@@ -29,7 +29,7 @@ Rationale
 
 Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) does this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
 
-This package has basic annotation information from [Ensembl release 89](http://may2017.archive.ensembl.org/) for:
+This package has basic annotation information from **Ensembl Genes 89** for:
 
 -   Human build 38 (`grch38`)
 -   Human build 37 (`grch37`)
@@ -66,21 +66,20 @@ Look at the human genes table (note the description column gets cut off because 
 grch38
 ```
 
-    ## # A tibble: 64,101 x 9
-    ##            ensgene entrez          symbol              chr     start
-    ##              <chr>  <int>           <chr>            <chr>     <int>
-    ##  1 ENSG00000252303     NA       RNU6-280P CHR_HG2128_PATCH  67546651
-    ##  2 ENSG00000281771     NA           Y_RNA CHR_HG2128_PATCH  67631019
-    ##  3 ENSG00000281256     NA    RP11-222G7.2 CHR_HG2191_PATCH  74823667
-    ##  4 ENSG00000283272     NA Clostridiales-1 CHR_HG2022_PATCH  91356877
-    ##  5 ENSG00000280864     NA   RP11-654C22.2  CHR_HG126_PATCH  72505075
-    ##  6 ENSG00000280792     NA   RP11-315F22.1 CHR_HG2233_PATCH 239734956
-    ##  7 ENSG00000282878     NA    RP11-399E6.1  CHR_HG986_PATCH  41242373
-    ##  8 ENSG00000283276     NA  ABBA01000934.1 CHR_HG2022_PATCH  91374331
-    ##  9 ENSG00000281822     NA        RNU1-62P  CHR_HG126_PATCH  72577040
-    ## 10 ENSG00000281384     NA      AC093802.1 CHR_HG2233_PATCH 239762860
-    ## # ... with 64,091 more rows, and 4 more variables: end <int>,
-    ## #   strand <int>, biotype <chr>, description <chr>
+    ## # A tibble: 64,366 x 9
+    ##            ensgene entrez  symbol   chr start   end strand        biotype
+    ##              <chr>  <int>   <chr> <chr> <int> <int>  <int>          <chr>
+    ##  1 ENSG00000210049     NA   MT-TF    MT   577   647      1        Mt_tRNA
+    ##  2 ENSG00000211459   4549 MT-RNR1    MT   648  1601      1        Mt_rRNA
+    ##  3 ENSG00000210077     NA   MT-TV    MT  1602  1670      1        Mt_tRNA
+    ##  4 ENSG00000210082   4550 MT-RNR2    MT  1671  3229      1        Mt_rRNA
+    ##  5 ENSG00000209082     NA  MT-TL1    MT  3230  3304      1        Mt_tRNA
+    ##  6 ENSG00000198888   4535  MT-ND1    MT  3307  4262      1 protein_coding
+    ##  7 ENSG00000210100     NA   MT-TI    MT  4263  4331      1        Mt_tRNA
+    ##  8 ENSG00000210107     NA   MT-TQ    MT  4329  4400     -1        Mt_tRNA
+    ##  9 ENSG00000210112     NA   MT-TM    MT  4402  4469      1        Mt_tRNA
+    ## 10 ENSG00000198763   4536  MT-ND2    MT  4470  5511      1 protein_coding
+    ## # ... with 64,356 more rows, and 1 more variables: description <chr>
 
 Look at the human genes-to-transcripts table:
 
@@ -88,39 +87,39 @@ Look at the human genes-to-transcripts table:
 grch38_tx2gene
 ```
 
-    ## # A tibble: 215,929 x 2
+    ## # A tibble: 218,207 x 2
     ##             enstxp         ensgene
     ##              <chr>           <chr>
-    ##  1 ENST00000516494 ENSG00000252303
-    ##  2 ENST00000629583 ENSG00000281771
-    ##  3 ENST00000630845 ENSG00000281256
-    ##  4 ENST00000636322 ENSG00000283272
-    ##  5 ENST00000629165 ENSG00000280864
-    ##  6 ENST00000627995 ENSG00000280792
-    ##  7 ENST00000635404 ENSG00000282878
-    ##  8 ENST00000634566 ENSG00000282878
-    ##  9 ENST00000634321 ENSG00000282878
-    ## 10 ENST00000636327 ENSG00000283276
-    ## # ... with 215,919 more rows
+    ##  1 ENST00000583496 ENSG00000264452
+    ##  2 ENST00000620853 ENSG00000278324
+    ##  3 ENST00000636749 ENSG00000283502
+    ##  4 ENST00000476140 ENSG00000241226
+    ##  5 ENST00000516795 ENSG00000252604
+    ##  6 ENST00000616110 ENSG00000274494
+    ##  7 ENST00000581456 ENSG00000265896
+    ##  8 ENST00000636806 ENSG00000283386
+    ##  9 ENST00000620900 ENSG00000274520
+    ## 10 ENST00000612852 ENSG00000273623
+    ## # ... with 218,197 more rows
 
 Tables are saved in [tibble](http://tibble.tidyverse.org) format, pipe-able with [dplyr](http://dplyr.tidyverse.org):
 
 ``` r
 grch38 %>% 
-    filter(biotype == "protein_coding" & chr == "1") %>% 
-    select(ensgene, symbol, chr, start, end, description) %>% 
+    dplyr::filter(biotype == "protein_coding" & chr == "1") %>% 
+    dplyr::select(ensgene, symbol, chr, start, end, description) %>% 
     head %>% 
-    kable
+    knitr::kable(.)
 ```
 
-| ensgene         | symbol     | chr |      start|        end| description                                                                                |
-|:----------------|:-----------|:----|----------:|----------:|:-------------------------------------------------------------------------------------------|
-| ENSG00000117650 | NEK2       | 1   |  211658657|  211675630| NIMA related kinase 2 \[Source:HGNC Symbol;Acc:HGNC:7745\]                                 |
-| ENSG00000120341 | SEC16B     | 1   |  177923956|  177984303| SEC16 homolog B, endoplasmic reticulum export factor \[Source:HGNC Symbol;Acc:HGNC:30301\] |
-| ENSG00000174567 | GOLT1A     | 1   |  204198160|  204214092| golgi transport 1A \[Source:HGNC Symbol;Acc:HGNC:24766\]                                   |
-| ENSG00000278939 | AC242988.1 | 1   |  150302770|  150303291|                                                                                            |
-| ENSG00000280316 | AL365181.1 | 1   |  156597173|  156599410|                                                                                            |
-| ENSG00000221888 | OR1C1      | 1   |  247757462|  247758406| olfactory receptor family 1 subfamily C member 1 \[Source:HGNC Symbol;Acc:HGNC:8182\]      |
+| ensgene         | symbol  | chr |     start|       end| description                                                                                    |
+|:----------------|:--------|:----|---------:|---------:|:-----------------------------------------------------------------------------------------------|
+| ENSG00000162591 | MEGF6   | 1   |   3489920|   3611495| multiple EGF like domains 6 \[Source:HGNC Symbol;Acc:HGNC:3232\]                               |
+| ENSG00000188976 | NOC2L   | 1   |    944204|    959309| NOC2 like nucleolar associated transcriptional repressor \[Source:HGNC Symbol;Acc:HGNC:24517\] |
+| ENSG00000187634 | SAMD11  | 1   |    923928|    944581| sterile alpha motif domain containing 11 \[Source:HGNC Symbol;Acc:HGNC:28706\]                 |
+| ENSG00000142910 | TINAGL1 | 1   |  31576485|  31587686| tubulointerstitial nephritis antigen like 1 \[Source:HGNC Symbol;Acc:HGNC:19168\]              |
+| ENSG00000162493 | PDPN    | 1   |  13583465|  13617957| podoplanin \[Source:HGNC Symbol;Acc:HGNC:29602\]                                               |
+| ENSG00000204084 | INPP5B  | 1   |  37860697|  37947057| inositol polyphosphate-5-phosphatase B \[Source:HGNC Symbol;Acc:HGNC:6077\]                    |
 
 Example with [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) results from the [airway](https://bioconductor.org/packages/release/data/experiment/html/airway.html) package, made tidy with [biobroom](http://www.bioconductor.org/packages/devel/bioc/html/biobroom.html):
 
@@ -131,6 +130,21 @@ library(airway)
 data(airway)
 airway <- DESeqDataSet(airway, design = ~cell + dex)
 airway <- DESeq(airway)
+```
+
+    ## estimating size factors
+
+    ## estimating dispersions
+
+    ## gene-wise dispersion estimates
+
+    ## mean-dispersion relationship
+
+    ## final dispersion estimates
+
+    ## fitting model and testing
+
+``` r
 res <- results(airway)
 
 # tidy results with biobroom
@@ -152,11 +166,11 @@ head(res_tidy)
 
 ``` r
 res_tidy %>% 
-    arrange(p.adjusted) %>% 
+    dplyr::arrange(p.adjusted) %>% 
     head(20) %>% 
-    inner_join(grch38, by = c("gene" = "ensgene")) %>% 
-    select(gene, estimate, p.adjusted, symbol, description) %>% 
-    kable
+    dplyr::inner_join(grch38, by = c("gene" = "ensgene")) %>% 
+    dplyr::select(gene, estimate, p.adjusted, symbol, description) %>% 
+    knitr::kable(.)
 ```
 
 | gene            |   estimate|  p.adjusted| symbol  | description                                                                                                           |
@@ -174,7 +188,6 @@ res_tidy %>%
 | ENSG00000139132 |  -2.228903|           0| FGD4    | FYVE, RhoGEF and PH domain containing 4 \[Source:HGNC Symbol;Acc:HGNC:19125\]                                         |
 | ENSG00000162493 |  -1.891217|           0| PDPN    | podoplanin \[Source:HGNC Symbol;Acc:HGNC:29602\]                                                                      |
 | ENSG00000134243 |  -2.195712|           0| SORT1   | sortilin 1 \[Source:HGNC Symbol;Acc:HGNC:11186\]                                                                      |
-| ENSG00000179094 |  -3.191750|           0| PER1    | period circadian clock 1 \[Source:HGNC Symbol;Acc:HGNC:8845\]                                                         |
 | ENSG00000179094 |  -3.191750|           0| PER1    | period circadian clock 1 \[Source:HGNC Symbol;Acc:HGNC:8845\]                                                         |
 | ENSG00000162692 |   3.692662|           0| VCAM1   | vascular cell adhesion molecule 1 \[Source:HGNC Symbol;Acc:HGNC:12663\]                                               |
 | ENSG00000163884 |  -4.459128|           0| KLF15   | Kruppel like factor 15 \[Source:HGNC Symbol;Acc:HGNC:14536\]                                                          |

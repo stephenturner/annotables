@@ -4,12 +4,12 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(
+knitr::opts_chunk$set(
     cache = TRUE,
     echo = TRUE,
     message = FALSE,
     warning = FALSE)
+library(annotables)
 ```
 
 [airway]: https://bioconductor.org/packages/release/data/experiment/html/airway.html
@@ -51,7 +51,7 @@ devtools::install_github("stephenturner/annotables")
 
 Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt][] does this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
 
-This package has basic annotation information from [Ensembl release 89](http://may2017.archive.ensembl.org/) for:
+This package has basic annotation information from **`r ensembl_version`** for:
 
 - Human build 38 (`grch38`)
 - Human build 37 (`grch37`)
@@ -78,7 +78,7 @@ Additionally, there are `tx2gene` tables that link Ensembl gene IDs to Ensembl t
 
 ## Usage
 
-```{r}
+```{r, eval=FALSE}
 library(annotables)
 ```
 
@@ -98,10 +98,10 @@ Tables are saved in [tibble][] format, pipe-able with [dplyr][]:
 
 ```{r, results='asis'}
 grch38 %>% 
-    filter(biotype == "protein_coding" & chr == "1") %>% 
-    select(ensgene, symbol, chr, start, end, description) %>% 
+    dplyr::filter(biotype == "protein_coding" & chr == "1") %>% 
+    dplyr::select(ensgene, symbol, chr, start, end, description) %>% 
     head %>% 
-    kable
+    knitr::kable(.)
 ```
 
 
@@ -124,9 +124,9 @@ head(res_tidy)
 
 ```{r, results='asis'}
 res_tidy %>% 
-    arrange(p.adjusted) %>% 
+    dplyr::arrange(p.adjusted) %>% 
     head(20) %>% 
-    inner_join(grch38, by = c("gene" = "ensgene")) %>% 
-    select(gene, estimate, p.adjusted, symbol, description) %>% 
-    kable
+    dplyr::inner_join(grch38, by = c("gene" = "ensgene")) %>% 
+    dplyr::select(gene, estimate, p.adjusted, symbol, description) %>% 
+    knitr::kable(.)
 ```
