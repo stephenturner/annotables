@@ -67,19 +67,20 @@ grch38
 ```
 
     ## # A tibble: 64,366 x 9
-    ##            ensgene entrez  symbol   chr start   end strand        biotype
-    ##              <chr>  <int>   <chr> <chr> <int> <int>  <int>          <chr>
-    ##  1 ENSG00000210049     NA   MT-TF    MT   577   647      1        Mt_tRNA
-    ##  2 ENSG00000211459   4549 MT-RNR1    MT   648  1601      1        Mt_rRNA
-    ##  3 ENSG00000210077     NA   MT-TV    MT  1602  1670      1        Mt_tRNA
-    ##  4 ENSG00000210082   4550 MT-RNR2    MT  1671  3229      1        Mt_rRNA
-    ##  5 ENSG00000209082     NA  MT-TL1    MT  3230  3304      1        Mt_tRNA
-    ##  6 ENSG00000198888   4535  MT-ND1    MT  3307  4262      1 protein_coding
-    ##  7 ENSG00000210100     NA   MT-TI    MT  4263  4331      1        Mt_tRNA
-    ##  8 ENSG00000210107     NA   MT-TQ    MT  4329  4400     -1        Mt_tRNA
-    ##  9 ENSG00000210112     NA   MT-TM    MT  4402  4469      1        Mt_tRNA
-    ## 10 ENSG00000198763   4536  MT-ND2    MT  4470  5511      1 protein_coding
-    ## # ... with 64,356 more rows, and 1 more variables: description <chr>
+    ##            ensgene entrez   symbol   chr     start       end strand
+    ##              <chr>  <int>    <chr> <chr>     <int>     <int>  <int>
+    ##  1 ENSG00000000003   7105   TSPAN6     X 100627109 100639991     -1
+    ##  2 ENSG00000000005  64102     TNMD     X 100584802 100599885      1
+    ##  3 ENSG00000000419   8813     DPM1    20  50934867  50958555     -1
+    ##  4 ENSG00000000457  57147    SCYL3     1 169849631 169894267     -1
+    ##  5 ENSG00000000460  55732 C1orf112     1 169662007 169854080      1
+    ##  6 ENSG00000000938   2268      FGR     1  27612064  27635277     -1
+    ##  7 ENSG00000000971   3075      CFH     1 196651878 196747504      1
+    ##  8 ENSG00000001036   2519    FUCA2     6 143494811 143511690     -1
+    ##  9 ENSG00000001084   2729     GCLC     6  53497341  53616970     -1
+    ## 10 ENSG00000001167   4800     NFYA     6  41072945  41099976      1
+    ## # ... with 64,356 more rows, and 2 more variables: biotype <chr>,
+    ## #   description <chr>
 
 Look at the human genes-to-transcripts table:
 
@@ -90,16 +91,16 @@ grch38_tx2gene
     ## # A tibble: 218,207 x 2
     ##             enstxp         ensgene
     ##              <chr>           <chr>
-    ##  1 ENST00000583496 ENSG00000264452
-    ##  2 ENST00000620853 ENSG00000278324
-    ##  3 ENST00000636749 ENSG00000283502
-    ##  4 ENST00000476140 ENSG00000241226
-    ##  5 ENST00000516795 ENSG00000252604
-    ##  6 ENST00000616110 ENSG00000274494
-    ##  7 ENST00000581456 ENSG00000265896
-    ##  8 ENST00000636806 ENSG00000283386
-    ##  9 ENST00000620900 ENSG00000274520
-    ## 10 ENST00000612852 ENSG00000273623
+    ##  1 ENST00000373020 ENSG00000000003
+    ##  2 ENST00000496771 ENSG00000000003
+    ##  3 ENST00000494424 ENSG00000000003
+    ##  4 ENST00000612152 ENSG00000000003
+    ##  5 ENST00000614008 ENSG00000000003
+    ##  6 ENST00000373031 ENSG00000000005
+    ##  7 ENST00000485971 ENSG00000000005
+    ##  8 ENST00000371588 ENSG00000000419
+    ##  9 ENST00000466152 ENSG00000000419
+    ## 10 ENST00000371582 ENSG00000000419
     ## # ... with 218,197 more rows
 
 Tables are saved in [tibble](http://tibble.tidyverse.org) format, pipe-able with [dplyr](http://dplyr.tidyverse.org):
@@ -112,14 +113,14 @@ grch38 %>%
     knitr::kable(.)
 ```
 
-| ensgene         | symbol  | chr |     start|       end| description                                                                                    |
-|:----------------|:--------|:----|---------:|---------:|:-----------------------------------------------------------------------------------------------|
-| ENSG00000162591 | MEGF6   | 1   |   3489920|   3611495| multiple EGF like domains 6 \[Source:HGNC Symbol;Acc:HGNC:3232\]                               |
-| ENSG00000188976 | NOC2L   | 1   |    944204|    959309| NOC2 like nucleolar associated transcriptional repressor \[Source:HGNC Symbol;Acc:HGNC:24517\] |
-| ENSG00000187634 | SAMD11  | 1   |    923928|    944581| sterile alpha motif domain containing 11 \[Source:HGNC Symbol;Acc:HGNC:28706\]                 |
-| ENSG00000142910 | TINAGL1 | 1   |  31576485|  31587686| tubulointerstitial nephritis antigen like 1 \[Source:HGNC Symbol;Acc:HGNC:19168\]              |
-| ENSG00000162493 | PDPN    | 1   |  13583465|  13617957| podoplanin \[Source:HGNC Symbol;Acc:HGNC:29602\]                                               |
-| ENSG00000204084 | INPP5B  | 1   |  37860697|  37947057| inositol polyphosphate-5-phosphatase B \[Source:HGNC Symbol;Acc:HGNC:6077\]                    |
+| ensgene         | symbol   | chr |      start|        end| description                                                                         |
+|:----------------|:---------|:----|----------:|----------:|:------------------------------------------------------------------------------------|
+| ENSG00000000457 | SCYL3    | 1   |  169849631|  169894267| SCY1 like pseudokinase 3 \[Source:HGNC Symbol;Acc:HGNC:19285\]                      |
+| ENSG00000000460 | C1orf112 | 1   |  169662007|  169854080| chromosome 1 open reading frame 112 \[Source:HGNC Symbol;Acc:HGNC:25565\]           |
+| ENSG00000000938 | FGR      | 1   |   27612064|   27635277| FGR proto-oncogene, Src family tyrosine kinase \[Source:HGNC Symbol;Acc:HGNC:3697\] |
+| ENSG00000000971 | CFH      | 1   |  196651878|  196747504| complement factor H \[Source:HGNC Symbol;Acc:HGNC:4883\]                            |
+| ENSG00000001460 | STPG1    | 1   |   24356999|   24416934| sperm tail PG-rich repeat containing 1 \[Source:HGNC Symbol;Acc:HGNC:28070\]        |
+| ENSG00000001461 | NIPAL3   | 1   |   24415794|   24472976| NIPA like domain containing 3 \[Source:HGNC Symbol;Acc:HGNC:25233\]                 |
 
 Example with [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) results from the [airway](https://bioconductor.org/packages/release/data/experiment/html/airway.html) package, made tidy with [biobroom](http://www.bioconductor.org/packages/devel/bioc/html/biobroom.html):
 
@@ -130,21 +131,6 @@ library(airway)
 data(airway)
 airway <- DESeqDataSet(airway, design = ~cell + dex)
 airway <- DESeq(airway)
-```
-
-    ## estimating size factors
-
-    ## estimating dispersions
-
-    ## gene-wise dispersion estimates
-
-    ## mean-dispersion relationship
-
-    ## final dispersion estimates
-
-    ## fitting model and testing
-
-``` r
 res <- results(airway)
 
 # tidy results with biobroom

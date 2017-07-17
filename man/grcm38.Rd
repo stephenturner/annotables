@@ -12,7 +12,8 @@
 grcm38
 }
 \description{
-Mouse (\emph{Mus musculus}) annotations based on genome assembly GRCM38 from Ensembl.
+Mouse (\emph{Mus musculus}) annotations based on
+genome assembly GRCM38 from Ensembl.
 }
 \details{
 Variables:
@@ -30,6 +31,5 @@ Variables:
 }
 \examples{
 head(grcm38)
-
 }
 \keyword{datasets}

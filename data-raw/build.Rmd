@@ -7,6 +7,7 @@ date: "`r Sys.Date()`"
 library(knitr)
 opts_knit$set(root.dir = normalizePath(".."))
 opts_chunk$set(cache = TRUE)
+options(knitr.duplicate.label = "allow")
 
 library(biomaRt)
 library(yaml)
@@ -28,18 +29,20 @@ tidy_data <- function(df, recipe) {
     df %>%
         as_tibble %>%
         distinct %>%
-        rename(!!!syms(recipe$attributes))
+        rename(!!!syms(recipe$attributes)) %>%
+        arrange(!!sym("ensgene"))
 }
 
 save_data <- function(..., name) {
-    path <- file.path("data/", paste0(name, ".rda"))
+    path <- file.path("data", paste0(name, ".rda"))
     objs <- setNames(list(...), name)
-    save(list = name, file = path, envir = list2env(objs), compress = "xz")
+    save(list = name, file = path, envir = list2env(objs), compress = TRUE)
 }
 ```
 
 ```{r load_recipes}
-recipe.files <- dir("data-raw/recipes", full.names = TRUE)
+recipe.files <- file.path("data-raw", "recipes") %>%
+    dir(full.names = TRUE)
 names(recipe.files) <- sub(".yml", "", basename(recipe.files))
 recipes <- lapply(recipe.files, yaml.load_file)
 ```
@@ -89,6 +92,5 @@ save_data(ensembl_version, name = "ensembl_version")
 ```
 
 ```{r readme, results='hide'}
-options(knitr.duplicate.label = "allow")  # duplicate setup chunks
 rmarkdown::render("README.Rmd")
 ```

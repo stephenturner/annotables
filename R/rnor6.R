@@ -1,7 +1,12 @@
 #' Rat annotation data
 #'
-#' Rat (*Rattus norvegicus*) annotations based on genome assembly RNOR6 from Ensembl.
+#' Rat (*Rattus norvegicus*) annotations based on
+#' genome assembly RNOR6 from Ensembl.
 #'
+#' @docType data
+#' @keywords datasets
+#'
+#' @details
 #' Variables:
 #' 
 #' - ensgene
@@ -14,10 +19,8 @@
 #' - biotype
 #' - description
 #'
+#' @source \url{http://ensembl.org/rattus_norvegicus}
+#'
 #' @examples
 #' head(rnor6)
-#'
-#' @source \url{http://ensembl.org/rattus_norvegicus}
-#' @docType data
-#' @keywords datasets
 "rnor6"

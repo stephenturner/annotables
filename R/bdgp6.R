@@ -1,7 +1,12 @@
 #' Fruitfly annotation data
 #'
-#' Fruitfly (*Drosophila melanogaster*) annotations based on genome assembly BDGP6 from Ensembl.
+#' Fruitfly (*Drosophila melanogaster*) annotations based on
+#' genome assembly BDGP6 from Ensembl.
 #'
+#' @docType data
+#' @keywords datasets
+#'
+#' @details
 #' Variables:
 #' 
 #' - ensgene
@@ -14,10 +19,8 @@
 #' - biotype
 #' - description
 #'
+#' @source \url{http://ensembl.org/drosophila_melanogaster}
+#'
 #' @examples
 #' head(bdgp6)
-#'
-#' @source \url{http://ensembl.org/drosophila_melanogaster}
-#' @docType data
-#' @keywords datasets
 "bdgp6"

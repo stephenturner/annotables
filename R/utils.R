@@ -6,7 +6,8 @@ document_annotable <- function(x, table, type) {
                                package = "annotables",
                                mustWork = TRUE)
 
-  table.path <- system.file("data", paste0(table, ".rda"), package = "annotables")
+  table.path <- system.file("data", paste0(table, ".rda"),
+                            package = "annotables")
   stopifnot(file.exists(table.path))
 
   file.path <- file.path("R", paste0(table, ".R"))

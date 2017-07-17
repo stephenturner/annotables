@@ -1,7 +1,12 @@
 #' Human annotation data
 #'
-#' Human (*Homo sapiens*) annotations based on genome assembly GRCH38 from Ensembl.
+#' Human (*Homo sapiens*) annotations based on
+#' genome assembly GRCH38 from Ensembl.
 #'
+#' @docType data
+#' @keywords datasets
+#'
+#' @details
 #' Variables:
 #' 
 #' - ensgene
@@ -14,10 +19,8 @@
 #' - biotype
 #' - description
 #'
+#' @source \url{http://ensembl.org/homo_sapiens}
+#'
 #' @examples
 #' head(grch38)
-#'
-#' @source \url{http://ensembl.org/homo_sapiens}
-#' @docType data
-#' @keywords datasets
 "grch38"

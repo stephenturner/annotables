@@ -12,7 +12,8 @@
 rnor6
 }
 \description{
-Rat (\emph{Rattus norvegicus}) annotations based on genome assembly RNOR6 from Ensembl.
+Rat (\emph{Rattus norvegicus}) annotations based on
+genome assembly RNOR6 from Ensembl.
 }
 \details{
 Variables:
@@ -30,6 +31,5 @@ Variables:
 }
 \examples{
 head(rnor6)
-
 }
 \keyword{datasets}

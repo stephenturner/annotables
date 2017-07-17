@@ -12,7 +12,8 @@
 bdgp6
 }
 \description{
-Fruitfly (\emph{Drosophila melanogaster}) annotations based on genome assembly BDGP6 from Ensembl.
+Fruitfly (\emph{Drosophila melanogaster}) annotations based on
+genome assembly BDGP6 from Ensembl.
 }
 \details{
 Variables:
@@ -30,6 +31,5 @@ Variables:
 }
 \examples{
 head(bdgp6)
-
 }
 \keyword{datasets}

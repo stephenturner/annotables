@@ -12,7 +12,9 @@
 galgal5_tx2gene
 }
 \description{
-Lookup table for converting Chicken (\emph{Gallus gallus}) Ensembl transcript IDs to gene IDs based on genome assembly GALGAL5 from Ensembl.
+Lookup table for converting Chicken (\emph{Gallus gallus})
+Ensembl transcript IDs to gene IDs based on genome assembly
+GALGAL5 from Ensembl.
 }
 \details{
 Variables:
@@ -23,6 +25,5 @@ Variables:
 }
 \examples{
 head(galgal5_tx2gene)
-
 }
 \keyword{datasets}

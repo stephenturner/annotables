@@ -12,7 +12,8 @@
 galgal5
 }
 \description{
-Chicken (\emph{Gallus gallus}) annotations based on genome assembly GALGAL5 from Ensembl.
+Chicken (\emph{Gallus gallus}) annotations based on
+genome assembly GALGAL5 from Ensembl.
 }
 \details{
 Variables:
@@ -30,6 +31,5 @@ Variables:
 }
 \examples{
 head(galgal5)
-
 }
 \keyword{datasets}

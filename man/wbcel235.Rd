@@ -12,7 +12,8 @@
 wbcel235
 }
 \description{
-Roundworm (\emph{Caenorhabditis elegans}) annotations based on genome assembly WBCEL235 from Ensembl.
+Roundworm (\emph{Caenorhabditis elegans}) annotations based on
+genome assembly WBCEL235 from Ensembl.
 }
 \details{
 Variables:
@@ -30,6 +31,5 @@ Variables:
 }
 \examples{
 head(wbcel235)
-
 }
 \keyword{datasets}

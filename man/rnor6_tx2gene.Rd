@@ -12,7 +12,9 @@
 rnor6_tx2gene
 }
 \description{
-Lookup table for converting Rat (\emph{Rattus norvegicus}) Ensembl transcript IDs to gene IDs based on genome assembly RNOR6 from Ensembl.
+Lookup table for converting Rat (\emph{Rattus norvegicus})
+Ensembl transcript IDs to gene IDs based on genome assembly
+RNOR6 from Ensembl.
 }
 \details{
 Variables:
@@ -23,6 +25,5 @@ Variables:
 }
 \examples{
 head(rnor6_tx2gene)
-
 }
 \keyword{datasets}

@@ -12,7 +12,9 @@
 wbcel235_tx2gene
 }
 \description{
-Lookup table for converting Roundworm (\emph{Caenorhabditis elegans}) Ensembl transcript IDs to gene IDs based on genome assembly WBCEL235 from Ensembl.
+Lookup table for converting Roundworm (\emph{Caenorhabditis elegans})
+Ensembl transcript IDs to gene IDs based on genome assembly
+WBCEL235 from Ensembl.
 }
 \details{
 Variables:
@@ -23,6 +25,5 @@ Variables:
 }
 \examples{
 head(wbcel235_tx2gene)
-
 }
 \keyword{datasets}

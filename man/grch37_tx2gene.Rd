@@ -12,7 +12,9 @@
 grch37_tx2gene
 }
 \description{
-Lookup table for converting Human (\emph{Homo sapiens}) Ensembl transcript IDs to gene IDs based on genome assembly GRCH37 from Ensembl.
+Lookup table for converting Human (\emph{Homo sapiens})
+Ensembl transcript IDs to gene IDs based on genome assembly
+GRCH37 from Ensembl.
 }
 \details{
 Variables:
@@ -23,6 +25,5 @@ Variables:
 }
 \examples{
 head(grch37_tx2gene)
-
 }
 \keyword{datasets}

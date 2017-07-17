@@ -10,6 +10,8 @@ Authors@R: c(
            email = "mike@steinbaugh.com",
            role = "ctb"))
 Description: Provides tables for converting and annotating Ensembl Gene IDs.
+URL: https://github.com/stephenturner/annotables
+BugReports: https://github.com/stephenturner/annotables/issues
 License: GPL-3
 LazyData: TRUE
 Depends:

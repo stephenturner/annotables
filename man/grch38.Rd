@@ -12,7 +12,8 @@
 grch38
 }
 \description{
-Human (\emph{Homo sapiens}) annotations based on genome assembly GRCH38 from Ensembl.
+Human (\emph{Homo sapiens}) annotations based on
+genome assembly GRCH38 from Ensembl.
 }
 \details{
 Variables:
@@ -30,6 +31,5 @@ Variables:
 }
 \examples{
 head(grch38)
-
 }
 \keyword{datasets}

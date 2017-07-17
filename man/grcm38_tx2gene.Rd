@@ -12,7 +12,9 @@
 grcm38_tx2gene
 }
 \description{
-Lookup table for converting Mouse (\emph{Mus musculus}) Ensembl transcript IDs to gene IDs based on genome assembly GRCM38 from Ensembl.
+Lookup table for converting Mouse (\emph{Mus musculus})
+Ensembl transcript IDs to gene IDs based on genome assembly
+GRCM38 from Ensembl.
 }
 \details{
 Variables:
@@ -23,6 +25,5 @@ Variables:
 }
 \examples{
 head(grcm38_tx2gene)
-
 }
 \keyword{datasets}
