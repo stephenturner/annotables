@@ -36,7 +36,7 @@ tidy_data <- function(df, recipe) {
 save_data <- function(..., name) {
     path <- file.path("data", paste0(name, ".rda"))
     objs <- setNames(list(...), name)
-    save(list = name, file = path, envir = list2env(objs), compress = TRUE)
+    save(list = name, file = path, envir = list2env(objs), compress = "xz")
 }
 ```
 

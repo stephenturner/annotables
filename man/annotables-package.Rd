@@ -8,6 +8,14 @@
 \description{
 Provides tables for converting and annotating Ensembl Gene IDs.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/stephenturner/annotables}
+  \item Report bugs at \url{https://github.com/stephenturner/annotables/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Stephen Turner \email{vustephen@gmail.com}
 
