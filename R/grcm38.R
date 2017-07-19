@@ -1,25 +1,26 @@
 #' Mouse annotation data
 #'
-#' Mouse (\emph{Mus musculus}) annotations based on genome assembly GRCM38 from Ensembl.
+#' Mouse (*Mus musculus*) annotations based on
+#' genome assembly GRCM38 from Ensembl.
 #'
+#' @docType data
+#' @keywords datasets
+#'
+#' @details
 #' Variables:
+#' 
+#' - ensgene
+#' - entrez
+#' - symbol
+#' - chr
+#' - start
+#' - end
+#' - strand
+#' - biotype
+#' - description
 #'
-#' \itemize{
-#'   \item ensgene 
-#'   \item entrez 
-#'   \item symbol 
-#'   \item chr 
-#'   \item start 
-#'   \item end 
-#'   \item strand 
-#'   \item biotype 
-#'   \item description 
-#' }
+#' @source \url{http://ensembl.org/mus_musculus}
 #'
 #' @examples
 #' head(grcm38)
-#'
-#' @source \url{http://ensembl.org/mus_musculus}
-#' @docType data
-#' @keywords datasets
 "grcm38"

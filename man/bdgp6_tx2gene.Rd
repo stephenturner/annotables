@@ -12,19 +12,18 @@
 bdgp6_tx2gene
 }
 \description{
-Lookup table for converting Fruitfly (\emph{Drosophila melanogaster}) Ensembl transcript IDs to gene IDs based on genome assembly BDGP6 from Ensembl.
+Lookup table for converting Fruitfly (\emph{Drosophila melanogaster})
+Ensembl transcript IDs to gene IDs based on genome assembly
+BDGP6 from Ensembl.
 }
 \details{
 Variables:
-
 \itemize{
-  \item enstxp 
-  \item ensgene 
+\item enstxp
+\item ensgene
 }
 }
 \examples{
 head(bdgp6_tx2gene)
-
 }
 \keyword{datasets}
-

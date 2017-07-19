@@ -12,26 +12,24 @@
 galgal5
 }
 \description{
-Chicken (\emph{Gallus gallus}) annotations based on genome assembly GALGAL5 from Ensembl.
+Chicken (\emph{Gallus gallus}) annotations based on
+genome assembly GALGAL5 from Ensembl.
 }
 \details{
 Variables:
-
 \itemize{
-  \item ensgene 
-  \item entrez 
-  \item symbol 
-  \item chr 
-  \item start 
-  \item end 
-  \item strand 
-  \item biotype 
-  \item description 
+\item ensgene
+\item entrez
+\item symbol
+\item chr
+\item start
+\item end
+\item strand
+\item biotype
+\item description
 }
 }
 \examples{
 head(galgal5)
-
 }
 \keyword{datasets}
-

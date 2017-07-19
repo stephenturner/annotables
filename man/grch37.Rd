@@ -12,26 +12,24 @@
 grch37
 }
 \description{
-Human (\emph{Homo sapiens}) annotations based on genome assembly GRCH37 from Ensembl.
+Human (\emph{Homo sapiens}) annotations based on
+genome assembly GRCH37 from Ensembl.
 }
 \details{
 Variables:
-
 \itemize{
-  \item ensgene 
-  \item entrez 
-  \item symbol 
-  \item chr 
-  \item start 
-  \item end 
-  \item strand 
-  \item biotype 
-  \item description 
+\item ensgene
+\item entrez
+\item symbol
+\item chr
+\item start
+\item end
+\item strand
+\item biotype
+\item description
 }
 }
 \examples{
 head(grch37)
-
 }
 \keyword{datasets}
-

@@ -1,18 +1,19 @@
 {{=<% %>=}}
 #' <% name %> annotation data
 #'
-#' <% name %> (\emph{ <% species %> }) annotations based on genome assembly <% assembly %> from Ensembl.
+#' <% name %> (*<% species %>*) annotations based on
+#' genome assembly <% assembly %> from Ensembl.
 #'
+#' @docType data
+#' @keywords datasets
+#'
+#' @details
 #' Variables:
+#' <%# attributes %>
+#' - <% . %><%/ attributes %>
 #'
-#' \itemize{ <%# attributes %>
-#'   \item <% . %> <%/ attributes %>
-#'  }
+#' @source \url{http://ensembl.org/<% path %> }
 #'
 #' @examples
 #' head(<% table %>)
-#'
-#' @source \url{http://ensembl.org/<% path %> }
-#' @docType data
-#' @keywords datasets
 "<% table %>"

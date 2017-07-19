@@ -4,7 +4,7 @@
 \name{bdgp6}
 \alias{bdgp6}
 \title{Fruitfly annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19639 rows and 9 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19663 rows and 9 columns.}
 \source{
 \url{http://ensembl.org/drosophila_melanogaster}
 }
@@ -12,26 +12,24 @@
 bdgp6
 }
 \description{
-Fruitfly (\emph{Drosophila melanogaster}) annotations based on genome assembly BDGP6 from Ensembl.
+Fruitfly (\emph{Drosophila melanogaster}) annotations based on
+genome assembly BDGP6 from Ensembl.
 }
 \details{
 Variables:
-
 \itemize{
-  \item ensgene 
-  \item entrez 
-  \item symbol 
-  \item chr 
-  \item start 
-  \item end 
-  \item strand 
-  \item biotype 
-  \item description 
+\item ensgene
+\item entrez
+\item symbol
+\item chr
+\item start
+\item end
+\item strand
+\item biotype
+\item description
 }
 }
 \examples{
 head(bdgp6)
-
 }
 \keyword{datasets}
-
