@@ -5,7 +5,7 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-    cache = TRUE,
+    cache = FALSE,
     echo = TRUE,
     message = FALSE,
     warning = FALSE)

@@ -29,7 +29,7 @@ Rationale
 
 Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) does this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
 
-This package has basic annotation information from **Ensembl Genes 89** for:
+This package has basic annotation information from **Ensembl Genes 90** for:
 
 -   Human build 38 (`grch38`)
 -   Human build 37 (`grch37`)
