@@ -4,7 +4,7 @@
 \name{grcm38}
 \alias{grcm38}
 \title{Mouse annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 53001 rows and 9 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 53728 rows and 9 columns.}
 \source{
 \url{http://ensembl.org/mus_musculus}
 }

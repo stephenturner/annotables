@@ -1,13 +1,16 @@
 Package: annotables
 Type: Package
 Title: Ensembl Annotation Tables
-Version: 0.1.90
+Version: 0.1.90.1
 Authors@R: c(
     person("Stephen", "Turner",
            email = "vustephen@gmail.com",
            role = c("aut", "cre")),
     person("Michael J.", "Steinbaugh",
            email = "mike@steinbaugh.com",
+           role = "ctb"),
+    person("Aaron", "Wolen",
+           email = "aaron@wolen.com",
            role = "ctb"))
 Description: Provides tables for converting and annotating Ensembl Gene IDs.
 URL: https://github.com/stephenturner/annotables
@@ -16,6 +19,7 @@ License: GPL-3
 LazyData: TRUE
 Depends:
     R (>= 3.1.2)
+Imports: tibble
 Suggests:
     devtools,
     dplyr,
