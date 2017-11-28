@@ -4,7 +4,7 @@
 \name{grcm38_tx2gene}
 \alias{grcm38_tx2gene}
 \title{Mouse transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 129826 rows and 2 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 132305 rows and 2 columns.}
 \source{
 \url{http://ensembl.org/mus_musculus}
 }

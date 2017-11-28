@@ -22,6 +22,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item Michael J. Steinbaugh \email{mike@steinbaugh.com} [contributor]
+  \item Aaron Wolen \email{aaron@wolen.com} [contributor]
 }
 
 }
