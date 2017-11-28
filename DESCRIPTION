@@ -16,6 +16,7 @@ License: GPL-3
 LazyData: TRUE
 Depends:
     R (>= 3.1.2)
+Imports: tibble
 Suggests:
     devtools,
     dplyr,
