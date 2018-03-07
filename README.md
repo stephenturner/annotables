@@ -29,7 +29,7 @@ Rationale
 
 Many bioinformatics tasks require converting gene identifiers from one convention to another, or annotating gene identifiers with gene symbol, description, position, etc. Sure, [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) does this for you, but I got tired of remembering biomaRt syntax and hammering Ensembl's servers every time I needed to do this.
 
-This package has basic annotation information from **Ensembl Genes 90** for:
+This package has basic annotation information from **Ensembl Genes 91** for:
 
 -   Human build 38 (`grch38`)
 -   Human build 37 (`grch37`)
@@ -38,6 +38,7 @@ This package has basic annotation information from **Ensembl Genes 90** for:
 -   Chicken (`galgal5`)
 -   Worm (`wbcel235`)
 -   Fly (`bdgp6`)
+-   Macaque (`mmul801`)
 
 Where each table contains:
 
@@ -66,21 +67,20 @@ Look at the human genes table (note the description column gets cut off because 
 grch38
 ```
 
-    ## # A tibble: 64,366 x 9
-    ##            ensgene entrez   symbol   chr     start       end strand
-    ##              <chr>  <int>    <chr> <chr>     <int>     <int>  <int>
-    ##  1 ENSG00000000003   7105   TSPAN6     X 100627109 100639991     -1
-    ##  2 ENSG00000000005  64102     TNMD     X 100584802 100599885      1
-    ##  3 ENSG00000000419   8813     DPM1    20  50934867  50958555     -1
-    ##  4 ENSG00000000457  57147    SCYL3     1 169849631 169894267     -1
-    ##  5 ENSG00000000460  55732 C1orf112     1 169662007 169854080      1
-    ##  6 ENSG00000000938   2268      FGR     1  27612064  27635277     -1
-    ##  7 ENSG00000000971   3075      CFH     1 196651878 196747504      1
-    ##  8 ENSG00000001036   2519    FUCA2     6 143494811 143511690     -1
-    ##  9 ENSG00000001084   2729     GCLC     6  53497341  53616970     -1
-    ## 10 ENSG00000001167   4800     NFYA     6  41072945  41099976      1
-    ## # ... with 64,356 more rows, and 2 more variables: biotype <chr>,
-    ## #   description <chr>
+    ## # A tibble: 64,428 x 9
+    ##    ensgene  entrez symbol chr    start    end strand biotype description  
+    ##    <chr>     <int> <chr>  <chr>  <int>  <int>  <int> <chr>   <chr>        
+    ##  1 ENSG000…   7105 TSPAN6 X     1.01e⁸ 1.01e⁸     -1 protei… tetraspanin …
+    ##  2 ENSG000…  64102 TNMD   X     1.01e⁸ 1.01e⁸      1 protei… tenomodulin …
+    ##  3 ENSG000…   8813 DPM1   20    5.09e⁷ 5.10e⁷     -1 protei… dolichyl-pho…
+    ##  4 ENSG000…  57147 SCYL3  1     1.70e⁸ 1.70e⁸     -1 protei… SCY1 like ps…
+    ##  5 ENSG000…  55732 C1orf… 1     1.70e⁸ 1.70e⁸      1 protei… chromosome 1…
+    ##  6 ENSG000…   2268 FGR    1     2.76e⁷ 2.76e⁷     -1 protei… FGR proto-on…
+    ##  7 ENSG000…   3075 CFH    1     1.97e⁸ 1.97e⁸      1 protei… complement f…
+    ##  8 ENSG000…   2519 FUCA2  6     1.43e⁸ 1.44e⁸     -1 protei… fucosidase, …
+    ##  9 ENSG000…   2729 GCLC   6     5.35e⁷ 5.36e⁷     -1 protei… glutamate-cy…
+    ## 10 ENSG000…   4800 NFYA   6     4.11e⁷ 4.11e⁷      1 protei… nuclear tran…
+    ## # ... with 64,418 more rows
 
 Look at the human genes-to-transcripts table:
 
@@ -88,9 +88,9 @@ Look at the human genes-to-transcripts table:
 grch38_tx2gene
 ```
 
-    ## # A tibble: 218,207 x 2
-    ##             enstxp         ensgene
-    ##              <chr>           <chr>
+    ## # A tibble: 219,288 x 2
+    ##    enstxp          ensgene        
+    ##    <chr>           <chr>          
     ##  1 ENST00000373020 ENSG00000000003
     ##  2 ENST00000496771 ENSG00000000003
     ##  3 ENST00000494424 ENSG00000000003
@@ -101,7 +101,7 @@ grch38_tx2gene
     ##  8 ENST00000371588 ENSG00000000419
     ##  9 ENST00000466152 ENSG00000000419
     ## 10 ENST00000371582 ENSG00000000419
-    ## # ... with 218,197 more rows
+    ## # ... with 219,278 more rows
 
 Tables are saved in [tibble](http://tibble.tidyverse.org) format, pipe-able with [dplyr](http://dplyr.tidyverse.org):
 
@@ -140,15 +140,14 @@ head(res_tidy)
 ```
 
     ## # A tibble: 6 x 7
-    ##              gene    baseMean    estimate  stderror  statistic
-    ##             <chr>       <dbl>       <dbl>     <dbl>      <dbl>
-    ## 1 ENSG00000000003 708.6021697  0.38125397 0.1006560  3.7876937
-    ## 2 ENSG00000000005   0.0000000          NA        NA         NA
-    ## 3 ENSG00000000419 520.2979006 -0.20681259 0.1122218 -1.8428915
-    ## 4 ENSG00000000457 237.1630368 -0.03792034 0.1434532 -0.2643394
-    ## 5 ENSG00000000460  57.9326331  0.08816367 0.2871677  0.3070111
-    ## 6 ENSG00000000938   0.3180984  1.37822703 3.4998728  0.3937935
-    ## # ... with 2 more variables: p.value <dbl>, p.adjusted <dbl>
+    ##   gene            baseMean estimate stderror statistic  p.value p.adjusted
+    ##   <chr>              <dbl>    <dbl>    <dbl>     <dbl>    <dbl>      <dbl>
+    ## 1 ENSG00000000003  709       0.381     0.101     3.79   1.52e⁻⁴    0.00128
+    ## 2 ENSG00000000005    0      NA        NA        NA     NA         NA      
+    ## 3 ENSG00000000419  520     - 0.207     0.112   - 1.84   6.53e⁻²    0.197  
+    ## 4 ENSG00000000457  237     - 0.0379    0.143   - 0.264  7.92e⁻¹    0.911  
+    ## 5 ENSG00000000460   57.9     0.0882    0.287     0.307  7.59e⁻¹    0.895  
+    ## 6 ENSG00000000938    0.318   1.38      3.50      0.394  6.94e⁻¹   NA
 
 ``` r
 res_tidy %>% 

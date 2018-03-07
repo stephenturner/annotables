@@ -1,0 +1,15 @@
+name: Macaque
+species: Macaca mulatta
+host: ensembl.org
+biomart: ENSEMBL_MART_ENSEMBL
+dataset: mmulatta_gene_ensembl
+attributes:
+  ensgene: ensembl_gene_id
+  entrez: entrezgene
+  symbol: external_gene_name
+  chr: chromosome_name
+  start: start_position
+  end: end_position
+  strand: strand
+  biotype: gene_biotype
+  description: description

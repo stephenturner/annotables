@@ -60,6 +60,7 @@ This package has basic annotation information from **`r ensembl_version`** for:
 - Chicken (`galgal5`)
 - Worm (`wbcel235`)
 - Fly (`bdgp6`)
+- Macaque (`mmul801`)
 
 Where each table contains:
 
