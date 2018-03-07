@@ -4,7 +4,7 @@
 \name{grch38_tx2gene}
 \alias{grch38_tx2gene}
 \title{Human transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 218207 rows and 2 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 219288 rows and 2 columns.}
 \source{
 \url{http://ensembl.org/homo_sapiens}
 }
