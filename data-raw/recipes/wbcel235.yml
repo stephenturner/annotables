@@ -5,7 +5,7 @@ biomart: ENSEMBL_MART_ENSEMBL
 dataset: celegans_gene_ensembl
 attributes:
   ensgene: ensembl_gene_id
-  entrez: entrezgene
+  entrez: entrezgene_id
   symbol: external_gene_name
   chr: chromosome_name
   start: start_position
