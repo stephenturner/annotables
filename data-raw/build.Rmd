@@ -26,12 +26,16 @@ get_data <- function(recipe) {
     getBM(attr, mart = mart)
 }
 
-tidy_data <- function(df, recipe) {
-    df %>%
+tidy_data <- function(df, recipe, tx = FALSE) {
+    df <- df %>%
         as_tibble %>%
         distinct %>%
         rename(!!!syms(recipe$attributes)) %>%
         arrange(!!sym("ensgene"))
+    if (!tx) {
+        df <- df %>% mutate(description = sub("\ \\[.+\\]", "", description, perl = TRUE))
+    }
+    return(df)
 }
 
 save_data <- function(..., name) {
@@ -53,7 +57,7 @@ recipes <- lapply(recipe.files, yaml.load_file)
 genetables <- lapply(recipes, get_data)
 
 # tidy gene tables
-genetables <- Map(tidy_data, genetables, recipes)
+genetables <- Map(tidy_data, genetables, recipes, FALSE)
 
 # export data
 Map(save_data, genetables, name = names(genetables))
@@ -76,7 +80,7 @@ recipes <- lapply(recipes, function(x) {
 tx2gene <- lapply(recipes, get_data)
 
 # tidy tx2gene
-tx2gene <- Map(tidy_data, tx2gene, recipes)
+tx2gene <- Map(tidy_data, tx2gene, recipes, TRUE)
 
 # export data
 Map(save_data, tx2gene, name = names(tx2gene))
