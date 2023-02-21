@@ -1,7 +1,7 @@
 Package: annotables
 Type: Package
 Title: Ensembl Annotation Tables
-Version: 0.1.91
+Version: 0.2.0
 Authors@R: c(
     person("Stephen", "Turner",
            email = "vustephen@gmail.com",
