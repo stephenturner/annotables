@@ -1,6 +1,6 @@
 name: Macaque
 species: Macaca mulatta
-host: ensembl.org
+host: https://useast.ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: mmulatta_gene_ensembl
 attributes:

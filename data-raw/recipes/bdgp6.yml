@@ -1,6 +1,6 @@
 name: Fruitfly
 species: Drosophila melanogaster
-host: ensembl.org
+host: https://useast.ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: dmelanogaster_gene_ensembl
 attributes:

@@ -1,6 +1,6 @@
 name: Rat
 species: Rattus norvegicus
-host: ensembl.org
+host: https://useast.ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: rnorvegicus_gene_ensembl
 attributes:
