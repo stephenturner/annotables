@@ -1,6 +1,6 @@
 name: Roundworm
 species: Caenorhabditis elegans
-host: ensembl.org
+host: https://useast.ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: celegans_gene_ensembl
 attributes:

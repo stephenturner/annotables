@@ -4,7 +4,9 @@
 \name{bdgp6_tx2gene}
 \alias{bdgp6_tx2gene}
 \title{Fruitfly transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 34749 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 41209 rows and 2 columns.
+}
 \source{
 \url{http://ensembl.org/drosophila_melanogaster}
 }

@@ -4,7 +4,9 @@
 \name{galgal5}
 \alias{galgal5}
 \title{Chicken annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 25677 rows and 9 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 34132 rows and 9 columns.
+}
 \source{
 \url{http://ensembl.org/gallus_gallus}
 }

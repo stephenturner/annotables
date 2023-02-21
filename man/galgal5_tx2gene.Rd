@@ -4,7 +4,9 @@
 \name{galgal5_tx2gene}
 \alias{galgal5_tx2gene}
 \title{Chicken transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 38118 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 72689 rows and 2 columns.
+}
 \source{
 \url{http://ensembl.org/gallus_gallus}
 }

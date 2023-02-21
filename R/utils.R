@@ -1,7 +1,7 @@
 # Generate annotable documentation based on recipe
 document_annotable <- function(x, table, type) {
   type <- match.arg(type, c("gene", "tx2gene"))
-  template.path <- system.file("inst/templates",
+  template.path <- system.file("templates",
                                paste0(type, ".R"),
                                package = "annotables",
                                mustWork = TRUE)

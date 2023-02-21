@@ -1,6 +1,6 @@
 name: Human
 species: Homo sapiens
-host: ensembl.org
+host: https://useast.ensembl.org
 biomart: ENSEMBL_MART_ENSEMBL
 dataset: hsapiens_gene_ensembl
 attributes:

@@ -4,7 +4,9 @@
 \name{bdgp6}
 \alias{bdgp6}
 \title{Fruitfly annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19663 rows and 9 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 26064 rows and 9 columns.
+}
 \source{
 \url{http://ensembl.org/drosophila_melanogaster}
 }

@@ -4,7 +4,9 @@
 \name{ensembl_version}
 \alias{ensembl_version}
 \title{Ensembl version used for build}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \source{
 \url{http://www.ensembl.org/}
 }
