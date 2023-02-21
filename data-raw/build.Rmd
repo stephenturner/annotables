@@ -21,7 +21,6 @@ devtools::load_all()
 get_data <- function(recipe) {
     message(recipe$dataset)
     mart <- useMart(recipe$biomart, recipe$dataset, recipe$host)
-    # mart <- useMart(recipe$biomart, recipe$dataset)
     attr <- unlist(recipe$attributes, use.names = FALSE)
     getBM(attr, mart = mart)
 }
