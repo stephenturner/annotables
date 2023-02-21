@@ -4,7 +4,9 @@
 \name{mmul801_tx2gene}
 \alias{mmul801_tx2gene}
 \title{Macaque transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 56748 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 64228 rows and 2 columns.
+}
 \source{
 \url{http://ensembl.org/macaca_mulatta}
 }

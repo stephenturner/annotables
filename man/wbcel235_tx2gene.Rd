@@ -4,7 +4,9 @@
 \name{wbcel235_tx2gene}
 \alias{wbcel235_tx2gene}
 \title{Roundworm transcripts to genes}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 58941 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 60000 rows and 2 columns.
+}
 \source{
 \url{http://ensembl.org/caenorhabditis_elegans}
 }

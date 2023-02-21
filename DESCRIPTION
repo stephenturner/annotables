@@ -30,4 +30,4 @@ Suggests:
     whisker,
     yaml
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.3

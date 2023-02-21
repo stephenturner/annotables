@@ -4,7 +4,9 @@
 \name{mmul801}
 \alias{mmul801}
 \title{Macaque annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 32820 rows and 9 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 38338 rows and 9 columns.
+}
 \source{
 \url{http://ensembl.org/macaca_mulatta}
 }

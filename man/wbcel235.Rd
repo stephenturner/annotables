@@ -4,7 +4,9 @@
 \name{wbcel235}
 \alias{wbcel235}
 \title{Roundworm annotation data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 47065 rows and 9 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 46926 rows and 9 columns.
+}
 \source{
 \url{http://ensembl.org/caenorhabditis_elegans}
 }
